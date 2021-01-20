@@ -6,25 +6,7 @@ import radiuses, { Radiuses } from './radiuses';
 import spacing, { Spacing } from './spacing';
 import typography, { Typography } from './typography';
 
-interface AnimationObject {
-    assets: any[];
-    ddd: number;
-    fr: number;
-    h: number;
-    ip: number;
-    layers: any[];
-    nm: string;
-    op: number;
-    v: string;
-    w: number;
-}
-
-interface Animations {
-    loading: string | AnimationObject | { uri: string };
-}
-
 export interface Theme {
-    animations: Animations;
     colors: Colors;
     linearGradients: LinearGradients;
     radiuses: Radiuses;
@@ -33,9 +15,6 @@ export interface Theme {
 }
 
 export const defaultTheme = {
-    animations: {
-        loading: '',
-    },
     colors,
     linearGradients,
     radiuses,

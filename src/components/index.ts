@@ -1,6 +1,5 @@
 export { default as ActionButton } from './ActionButton';
 export { default as AdjustableContainer } from './AdjustableContainer';
-export { default as Animation } from './Animation';
 export { default as Button } from './Button';
 export { default as Caption } from './Caption';
 export { default as Card } from './Card';
@@ -15,7 +14,6 @@ export { default as Icon } from './Icon';
 export { default as Image } from './Image';
 export { default as Label } from './Label';
 export { default as Link } from './Link';
-export { default as Loading } from './Loading';
 export { default as Padding } from './Padding';
 export { default as PasswordInput } from './PasswordInput';
 export { default as Rating } from './Rating';

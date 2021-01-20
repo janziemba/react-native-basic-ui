@@ -16,7 +16,9 @@
     "readmeFilename": "README.md",
     "homepage": "https://github.com/janziemba/react-native-basic-ui#readme",
     "main": "dist/index.js",
-    "files": ["/dist"],
+    "files": [
+        "/dist"
+    ],
     "bugs": {
         "url": "https://github.com/janziemba/react-native-basic-ui/issues",
         "email": "ziemba.jan@icloud.com"
@@ -30,7 +32,7 @@
         "lint": "yarn eslint 'src/**/*.{js,ts,tsx}' --quiet",
         "test": "yarn jest --passWithNoTests",
         "prepare": "yarn build",
-        "prepublishOnly" : "yarn lint && yarn test",
+        "prepublishOnly": "yarn lint && yarn test",
         "typescript:check": "yarn tsc --noEmit",
         "typescript:watch": "yarn tsc -p tsconfig.build.json -w"
     },
@@ -41,8 +43,6 @@
         "@react-native-community/picker": "^1.8.1",
         "husky": "^4.3.8",
         "lint-staged": "10.5.3",
-        "lottie-ios": "3.1.9",
-        "lottie-react-native": "3.5.0",
         "react": "16.13.1",
         "react-native": "0.63.4",
         "react-native-device-info": "^8.0.0",
