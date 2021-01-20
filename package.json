@@ -15,7 +15,8 @@
     "license": "MIT",
     "readmeFilename": "README.md",
     "homepage": "https://github.com/janziemba/react-native-basic-ui#readme",
-    "main": "src/index.ts",
+    "main": "dist/index.js",
+    "files": ["/dist"],
     "bugs": {
         "url": "https://github.com/janziemba/react-native-basic-ui/issues",
         "email": "ziemba.jan@icloud.com"
@@ -25,10 +26,12 @@
         "url": "https://github.com/janziemba/react-native-basic-ui.git"
     },
     "scripts": {
+        "build": "rm -rf dist && yarn tsc -p tsconfig.build.json",
         "lint": "yarn eslint 'src/**/*.{js,ts,tsx}' --quiet",
         "test": "yarn jest",
-        "typescript": "rm -rf dist && yarn tsc -p tsconfig.build.json",
-        "typescript:check": "yarn tsc -p tsconfig.build.json --noEmit",
+        "prepare": "yarn build",
+        "prepublishOnly" : "yarn lint && yarn test",
+        "typescript:check": "yarn tsc --noEmit",
         "typescript:watch": "yarn tsc -p tsconfig.build.json -w"
     },
     "dependencies": {
