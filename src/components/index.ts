@@ -16,8 +16,6 @@ export { default as Image } from './Image';
 export { default as Label } from './Label';
 export { default as Link } from './Link';
 export { default as Loading } from './Loading';
-export { default as NavigationButton } from './NavigationButton';
-export { default as NavigationLink } from './NavigationLink';
 export { default as Padding } from './Padding';
 export { default as PasswordInput } from './PasswordInput';
 export { default as Rating } from './Rating';
