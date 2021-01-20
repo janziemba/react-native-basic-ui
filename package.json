@@ -33,6 +33,7 @@
         "test": "yarn jest --passWithNoTests",
         "prepare": "yarn build",
         "prepublishOnly": "yarn lint && yarn test",
+        "typescript:build-types": "tsc -d --declarationDir types --declarationMap --emitDeclarationOnly",
         "typescript:check": "yarn tsc --noEmit",
         "typescript:watch": "yarn tsc -p tsconfig.build.json -w"
     },
