@@ -90,10 +90,7 @@
         }
     },
     "jest": {
-        "preset": "react-native",
-        "setupFiles": [
-            "./jest.setup.js"
-        ]
+        "preset": "react-native"
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
