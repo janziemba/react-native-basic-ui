@@ -9,8 +9,8 @@
         "noImplicitReturns": true,
         "outDir": "./dist",
         "paths": {
-            "@ui": ["src/ui"],
-            "@ui/*": ["src/ui/*"],
+            "@ui": ["src"],
+            "@ui/*": ["src/*"],
         },
         "resolveJsonModule": true,
         "skipLibCheck": true,
