@@ -28,7 +28,7 @@
     "scripts": {
         "build": "rm -rf dist && yarn tsc -p tsconfig.build.json",
         "lint": "yarn eslint 'src/**/*.{js,ts,tsx}' --quiet",
-        "test": "yarn jest",
+        "test": "yarn jest --passWithNoTests",
         "prepare": "yarn build",
         "prepublishOnly" : "yarn lint && yarn test",
         "typescript:check": "yarn tsc --noEmit",
