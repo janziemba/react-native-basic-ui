@@ -18,12 +18,7 @@
 
 ## Screenshots
 
-<img src="docs/assets/v01.png" width="250" height="504" />
-<img src="docs/assets/v02.png" width="250" height="504" />
-<img src="docs/assets/v03.png" width="250" height="504" />
-<img src="docs/assets/v04.png" width="250" height="504" />
-<img src="docs/assets/v05.png" width="250" height="504" />
-<img src="docs/assets/v06.png" width="250" height="504" />
+<img src="docs/assets/v01.png" width="250" height="504" /><img src="docs/assets/v02.png" width="250" height="504" /><img src="docs/assets/v03.png" width="250" height="504" /><img src="docs/assets/v04.png" width="250" height="504" /><img src="docs/assets/v05.png" width="250" height="504" /><img src="docs/assets/v06.png" width="250" height="504" />
 
 ## Getting started
 
