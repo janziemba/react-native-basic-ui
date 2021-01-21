@@ -22,6 +22,8 @@ export const defaultTheme = {
     typography,
 };
 
-const context = React.createContext<Theme>(defaultTheme);
+const ThemeContext = React.createContext<Theme>(defaultTheme);
 
-export default context;
+export const ThemeProvider = ThemeContext.Provider;
+
+export default ThemeContext;

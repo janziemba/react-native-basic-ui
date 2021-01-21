@@ -1,5 +1,5 @@
 export { default as colors } from './colors';
-export { default as context } from './context';
+export { default as ThemeContext, defaultTheme, Theme, ThemeProvider } from './context';
 export { default as linearGradients } from './linearGradients';
 export { default as radiuses } from './radiuses';
 export { default as spacing } from './spacing';
