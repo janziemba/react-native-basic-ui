@@ -138,7 +138,7 @@ const ExampleComponent = (props) => {
 
 ### Jan Ziemba
 
-Checkout my <a href="https://www.react-native.cz" title="React Native Developer" target="_blank">React Native portfolio website</a>
+Check out my <a href="https://react-native.cz" title="React Native Developer" target="_blank">React Native portfolio website</a>
 
 <a href="https://www.buymeacoffee.com/janziemba" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
