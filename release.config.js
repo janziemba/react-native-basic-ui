@@ -4,10 +4,12 @@ module.exports = {
         '@semantic-release/commit-analyzer',
         '@semantic-release/release-notes-generator',
         '@semantic-release/npm',
+        '@semantic-release/github',
         [
             '@semantic-release/git',
             {
-                message: 'chore(release): ${nextRelease.version}\n\n${nextRelease.notes}',
+                assets: ['package.json'],
+                message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
             },
         ],
     ],
