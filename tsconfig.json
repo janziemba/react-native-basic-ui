@@ -18,5 +18,5 @@
         "sourceMap": true,
         "strict": true
     },
-    "include": ["index.d.ts", "src"]
+    "include": ["src"]
 }

@@ -6,13 +6,12 @@ jobs:
     test:
         runs-on: ubuntu-latest
         timeout-minutes: 30
-        if: github.actor != 'dependabot[bot]' && github.actor != 'dependabot-preview[bot]'
         steps:
             - uses: actions/checkout@v2
             - name: Install packages
               run: yarn
             - name: Run TypeScript
-              run: yarn typescript
+              run: yarn typescript:check
             - name: Run ESLint
               run: yarn lint
             - name: Run tests
