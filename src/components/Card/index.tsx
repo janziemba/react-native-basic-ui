@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { View, ViewStyle } from 'react-native';
-import { CachedImageProps } from 'react-native-img-cache';
+import { Image, ImageProps, View, ViewStyle } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { Image, Scalable, Shadow, Text } from '@ui';
+import { Scalable, Shadow, Text } from '@ui';
 import { useStyles, useTheme } from '@ui/theme';
 import injectTheme, { Styles } from './styles';
 
 export interface Props {
-    imageDefaultSource?: CachedImageProps['defaultSource'];
-    imageSource: CachedImageProps['source'];
+    imageDefaultSource?: ImageProps['defaultSource'];
+    imageSource: ImageProps['source'];
     isFirst?: boolean;
     isLast?: boolean;
     onPress: () => void;

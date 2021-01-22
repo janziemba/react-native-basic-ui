@@ -1,14 +1,13 @@
 import * as React from 'react';
-import { View, ViewStyle } from 'react-native';
-import { CachedImageProps } from 'react-native-img-cache';
+import { Image, ImageProps, View, ViewStyle } from 'react-native';
 
-import { Image, Label, Padding, Rating, RowContainer, Scalable, Shadow, Spacer, Text } from '@ui';
+import { Label, Padding, Rating, RowContainer, Scalable, Shadow, Spacer, Text } from '@ui';
 import { useStyles } from '@ui/theme';
 import injectTheme, { Styles } from './styles';
 
 export interface Props {
-    imageDefaultSource?: CachedImageProps['defaultSource'];
-    imageSource: CachedImageProps['source'];
+    imageDefaultSource?: ImageProps['defaultSource'];
+    imageSource: ImageProps['source'];
     isFirst?: boolean;
     isLast?: boolean;
     labels?: string[];
