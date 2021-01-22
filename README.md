@@ -26,7 +26,7 @@
 yarn add react-native-basic-ui
 ```
 
-Also, complete [react-native-vector-icons installation](https://github.com/oblador/react-native-vector-icons#installation), otherwise you won't be able to use the Icon component.
+Also, complete installation of [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation) and [react-native-linear-gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient#installation), otherwise you won't be able to use the Icon component and linear gradients.
 
 ## Usage
 
@@ -56,6 +56,7 @@ import { defaultTheme, ThemeProvider } from 'react-native-basic-ui';
 const customTheme = {
     ...defaultTheme,
     colors: {
+        ..defaultTheme.colors,
         primary: 'green',
     },
 };
