@@ -1,8 +1,15 @@
 import * as React from 'react';
 import { Image, ImageProps, View, ViewStyle } from 'react-native';
 
-import { Label, Padding, Rating, RowContainer, Scalable, Shadow, Spacer, Text } from '@ui';
-import { useStyles } from '@ui/theme';
+import { useStyles } from '../../theme';
+import Label from '../Label';
+import Padding from '../Padding';
+import Rating from '../Rating';
+import RowContainer from '../RowContainer';
+import Scalable from '../Scalable';
+import Shadow from '../Shadow';
+import Spacer from '../Spacer';
+import Text from '../Text';
 import injectTheme, { Styles } from './styles';
 
 export interface Props {

@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Pressable, View } from 'react-native';
 
-import { Icon, RowContainer } from '@ui';
-import { useStyles, useTheme } from '@ui/theme';
+import { useStyles, useTheme } from '../../theme';
+import Icon from '../Icon';
+import RowContainer from '../RowContainer';
 import injectTheme, { Styles } from './styles';
 
 interface Props {

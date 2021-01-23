@@ -2,8 +2,10 @@ import * as React from 'react';
 import { Image, ImageProps, View, ViewStyle } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { Scalable, Shadow, Text } from '@ui';
-import { useStyles, useTheme } from '@ui/theme';
+import { useStyles, useTheme } from '../../theme';
+import Scalable from '../Scalable';
+import Shadow from '../Shadow';
+import Text from '../Text';
 import injectTheme, { Styles } from './styles';
 
 export interface Props {

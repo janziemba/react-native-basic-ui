@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { useStyles } from '@ui/theme';
+import { useStyles } from '../../theme';
 import Icon from '../Icon';
 import RowContainer from '../RowContainer';
 import injectTheme, { Styles } from './styles';

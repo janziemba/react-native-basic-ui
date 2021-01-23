@@ -9,7 +9,7 @@ import {
     ViewStyle,
 } from 'react-native';
 
-import { useStyles, useTheme } from '@ui/theme';
+import { useStyles, useTheme } from '../../theme';
 import Icon from '../Icon';
 import Scalable from '../Scalable';
 import injectTheme, { Styles } from './styles';

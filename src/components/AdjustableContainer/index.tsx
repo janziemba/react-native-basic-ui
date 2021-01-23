@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Animated, Keyboard, KeyboardEvent, Platform, View, ViewProps } from 'react-native';
 
-import { useStyles } from '@ui/theme';
+import { useStyles } from '../../theme';
 import Link from '../Link';
 import Padding from '../Padding';
 import injectTheme, { Styles } from './styles';

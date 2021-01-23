@@ -8,7 +8,7 @@ import {
     ViewStyle,
 } from 'react-native';
 
-import { useStyles, useTheme } from '@ui/theme';
+import { useStyles, useTheme } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
 interface Props extends Omit<TextInputProps, 'editable'> {

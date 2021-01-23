@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Animated } from 'react-native';
 
-import { colors } from '@ui/theme';
+import { colors } from '../../theme';
 import Icon from '../Icon';
 import Link from '../Link';
 import Text from '../Text';

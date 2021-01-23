@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text as RNText, TextProps, TextStyle } from 'react-native';
 
-import { useStyles } from '@ui/theme';
+import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
 export interface OwnProps {

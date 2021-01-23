@@ -2,9 +2,9 @@ import * as React from 'react';
 import { Insets, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { Scalable } from '@ui';
-import { linearGradients, useStyles } from '@ui/theme';
+import { linearGradients, useStyles } from '../../theme';
 import Icon, { Props as IconProps } from '../Icon';
+import Scalable from '../Scalable';
 import Text from '../Text';
 import injectTheme, { Styles } from './styles';
 

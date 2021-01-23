@@ -1,6 +1,6 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
-import { Theme } from '@ui/theme/context';
+import { Theme } from '../../theme/context';
 
 export interface Styles {
     textInput: ViewStyle;

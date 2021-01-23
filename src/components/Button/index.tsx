@@ -2,9 +2,10 @@ import * as React from 'react';
 import { Insets, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { Scalable, Text } from '@ui';
-import { useStyles, useTheme } from '@ui/theme';
+import { useStyles, useTheme } from '../../theme';
 import Icon, { IconSet } from '../Icon';
+import Scalable from '../Scalable';
+import Text from '../Text';
 import injectTheme, { Styles } from './styles';
 
 const hitSlop: Insets = { bottom: 10, left: 10, right: 10, top: 10 };

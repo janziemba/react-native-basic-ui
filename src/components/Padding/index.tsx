@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
-import { useStyles } from '@ui/theme';
+import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
 type Size = 'tiny' | 'small' | 'medium' | 'large' | 'huge' | 'gigantic';
