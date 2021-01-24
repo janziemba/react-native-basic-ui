@@ -3,6 +3,7 @@ import { StyleSheet, ViewStyle } from 'react-native';
 import { Theme } from '../../theme/context';
 
 export interface Styles {
+    base: ViewStyle;
     tiny: ViewStyle;
     small: ViewStyle;
     medium: ViewStyle;
@@ -17,6 +18,9 @@ export interface Styles {
 
 const injectTheme = ({ spacing }: Theme) =>
     StyleSheet.create<Styles>({
+        base: {
+            flex: 1,
+        },
         tiny: {
             padding: spacing.tiny,
         },

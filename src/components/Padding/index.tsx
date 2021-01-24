@@ -28,7 +28,7 @@ const Padding: React.FunctionComponent<Props> = (props: Props) => {
     const styles: Styles = useStyles(injectTheme);
 
     const mergedStyles = React.useMemo((): ViewStyle[] => {
-        let result = [styles[size]];
+        let result = [styles.base, styles[size]];
 
         if (!top) {
             result.push(styles.notTop);
