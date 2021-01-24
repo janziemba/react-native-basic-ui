@@ -20,7 +20,6 @@ export type IconSet =
     | 'SimpleLineIcons'
     | 'Zocial';
 
-
 export interface Props {
     /**
      * A color of the icon. The default value is dark.
