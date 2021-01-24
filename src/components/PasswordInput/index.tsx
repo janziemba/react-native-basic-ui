@@ -14,12 +14,19 @@ import Icon from '../Icon';
 import Scalable from '../Scalable';
 import injectTheme, { Styles } from './styles';
 
-interface Props extends TextInputProps {}
+interface OwnProps {
+    /**
+     * If true, text is not editable and a disabled style is applied. The default value is false.
+     */
+    isDisabled?: boolean;
+}
+
+interface Props extends OwnProps, Omit<TextInputProps, 'editable'> {}
 
 const PasswordInput: React.ForwardRefExoticComponent<
     Props & React.RefAttributes<RNTextInput>
 > = React.forwardRef<RNTextInput, Props>((props: Props, ref?: React.Ref<RNTextInput>) => {
-    const { onBlur, onFocus } = props;
+    const { isDisabled = false, onBlur, onFocus } = props;
 
     const styles: Styles = useStyles(injectTheme);
     const { colors } = useTheme();
@@ -70,8 +77,12 @@ const PasswordInput: React.ForwardRefExoticComponent<
             result.push(styles.textInputFocused);
         }
 
+        if (isDisabled) {
+            result.push(styles.textInputDisabled);
+        }
+
         return result;
-    }, [isFocused, styles]);
+    }, [isDisabled, isFocused, styles]);
 
     const handleIconPress = React.useCallback((): void => {
         setIsPasswordVisible(!isPasswordVisible);
@@ -81,7 +92,7 @@ const PasswordInput: React.ForwardRefExoticComponent<
         <View style={styles.container}>
             <RNTextInput
                 {...props}
-                editable={isEditable}
+                editable={!isDisabled && isEditable}
                 onBlur={handleBlur}
                 onFocus={handleFocus}
                 placeholderTextColor={colors.disabled}
