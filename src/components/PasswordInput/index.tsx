@@ -19,7 +19,7 @@ interface Props extends TextInputProps {}
 const PasswordInput: React.ForwardRefExoticComponent<
     Props & React.RefAttributes<RNTextInput>
 > = React.forwardRef<RNTextInput, Props>((props: Props, ref?: React.Ref<RNTextInput>) => {
-    const { allowFontScaling = false, autoCapitalize = 'none', onBlur, onFocus } = props;
+    const { onBlur, onFocus } = props;
 
     const styles: Styles = useStyles(injectTheme);
     const { colors } = useTheme();
@@ -81,8 +81,6 @@ const PasswordInput: React.ForwardRefExoticComponent<
         <View style={styles.container}>
             <RNTextInput
                 {...props}
-                allowFontScaling={allowFontScaling}
-                autoCapitalize={autoCapitalize}
                 editable={isEditable}
                 onBlur={handleBlur}
                 onFocus={handleFocus}

@@ -21,13 +21,7 @@ interface Props extends Omit<TextInputProps, 'editable'> {
 const TextInput: React.ForwardRefExoticComponent<
     Props & React.RefAttributes<RNTextInput>
 > = React.forwardRef<RNTextInput, Props>((props: Props, ref?: React.Ref<RNTextInput>) => {
-    const {
-        allowFontScaling = false,
-        autoCapitalize = 'none',
-        isDisabled = false,
-        onBlur,
-        onFocus,
-    } = props;
+    const { isDisabled = false, onBlur, onFocus } = props;
 
     const styles: Styles = useStyles(injectTheme);
     const { colors } = useTheme();
@@ -87,8 +81,6 @@ const TextInput: React.ForwardRefExoticComponent<
     return (
         <RNTextInput
             {...props}
-            allowFontScaling={allowFontScaling}
-            autoCapitalize={autoCapitalize}
             editable={!isDisabled && isEditable}
             onBlur={handleBlur}
             onFocus={handleFocus}

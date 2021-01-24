@@ -121,7 +121,7 @@ const Text: React.FunctionComponent<Props> = (props: Props) => {
     }, [align, color, size, style, styles, weight]);
 
     return (
-        <RNText {...props} allowFontScaling={false} style={mergedStyles} suppressHighlighting>
+        <RNText {...props} style={mergedStyles} suppressHighlighting>
             {children}
         </RNText>
     );
