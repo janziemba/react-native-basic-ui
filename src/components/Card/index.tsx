@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Image, ImageProps, View, ViewStyle } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 import { useStyles, useTheme } from '../../theme';
+import LinearGradient from '../LinearGradient';
 import Scalable from '../Scalable';
 import Shadow from '../Shadow';
 import Text from '../Text';

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Insets, View } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 import { linearGradients, useStyles } from '../../theme';
 import Icon, { Props as IconProps } from '../Icon';
+import LinearGradient from '../LinearGradient';
 import Scalable from '../Scalable';
 import Text from '../Text';
 import injectTheme, { Styles } from './styles';

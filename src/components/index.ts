@@ -12,6 +12,7 @@ export { default as FlexContainer } from './FlexContainer';
 export { default as Heading } from './Heading';
 export { default as Icon } from './Icon';
 export { default as Label } from './Label';
+export { default as LinearGradient } from './LinearGradient';
 export { default as Link } from './Link';
 export { default as Padding } from './Padding';
 export { default as PasswordInput } from './PasswordInput';
