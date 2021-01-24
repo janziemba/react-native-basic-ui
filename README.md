@@ -1,7 +1,5 @@
 # React Native Basic UI
 
-## ⚠️ Documentation in progress
-
 -   ✅ highly performant
 -   ✅ lightweight
 -   ✅ customizable
@@ -9,6 +7,7 @@
 -   ✅ typed
 -   ✅ documented
 -   ✅ accessible
+-   ✅ compatible with Expo
 
 [![npm version](https://img.shields.io/npm/v/react-native-basic-ui.svg?style=flat-square)](https://www.npmjs.com/package/react-native-basic-ui)
 ![Size](https://img.shields.io/github/size/janziemba/react-native-basic-ui/dist.svg?style=flat-square)
@@ -24,6 +23,12 @@
 
 ```sh
 yarn add react-native-basic-ui
+```
+
+or
+
+```sh
+npm install react-native-basic-ui
 ```
 
 Also, complete installation of [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons#installation) and [react-native-linear-gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient#installation), otherwise you won't be able to use the Icon component and linear gradients.
@@ -134,6 +139,28 @@ const ExampleComponent = (props) => {
     );
 };
 ```
+
+## Documentation
+
+Coming soon
+
+## Example
+
+Check this [Expo](https://snack.expo.io/@janziemba/react-native-basic-ui).
+
+# FAQ
+
+**Is it compatible with Expo?**
+
+Yes, it is, thanks to [@expo/vector-icons](https://docs.expo.io/guides/icons/) and [expo-linear-gradient](https://docs.expo.io/versions/latest/sdk/linear-gradient/).
+
+**Can I change the default props?**
+
+No. If you want to overwrite the default props you have to create your own component which extends this UI's component. For example if you want your `Scalable` to always have a scale of 0.5, you would need to create a new component which extends UI's `Scalable` and passes this prop to it.
+
+**Can I change the theme dynamically?**
+
+Yes, you can, however the whole app would be re-rendered.
 
 ## Author
 
