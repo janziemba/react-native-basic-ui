@@ -8,6 +8,9 @@ import injectTheme, { Styles } from './styles';
 
 interface OwnProps {
     children?: React.ReactNode;
+    /**
+     * A text of the link to dismiss keyboard.
+     */
     dismissKeyboardText: string;
 }
 

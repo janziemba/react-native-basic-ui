@@ -5,6 +5,9 @@ import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
 interface Props {
+    /**
+     * An actual text or an Icon and a text.
+     */
     children?: React.ReactNode;
 }
 

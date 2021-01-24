@@ -7,11 +7,26 @@ import injectTheme, { Styles } from './styles';
 type Size = 'tiny' | 'small' | 'medium' | 'large' | 'huge' | 'gigantic';
 
 interface Props {
+    /**
+     * If false, the padding is not applied on the bottom. The default value is true.
+     */
     bottom?: boolean;
     children?: React.ReactNode;
+    /**
+     * If false, the padding is not applied on the left. The default value is true.
+     */
     left?: boolean;
+    /**
+     * If false, the padding is not applied on the right. The default value is true.
+     */
     right?: boolean;
+    /**
+     * A size of the padding. The default value is large.
+     */
     size?: Size;
+    /**
+     * If false, the padding is not applied on the top. The default value is true.
+     */
     top?: boolean;
 }
 

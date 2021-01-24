@@ -2,13 +2,17 @@ import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
 import { useStyles } from '../../theme';
-import Text from '../Text';
+import Text, { Props as TextProps } from '../Text';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
-    children?: React.ReactNode;
+interface OwnProps {
+    /**
+     * A color of the label. The default value is success.
+     */
     color?: 'info' | 'success' | 'warning';
 }
+
+interface Props extends OwnProps, Pick<TextProps, 'children'> {}
 
 const Label: React.FunctionComponent<Props> = (props: Props) => {
     const { children, color = 'success' } = props;

@@ -1,23 +1,24 @@
 import * as React from 'react';
 
-import Text, { OwnProps as TextProps } from '../Text';
+import Text, { Props as TextProps } from '../Text';
 
 interface OwnProps {
-    children?: React.ReactNode;
-    disabled?: boolean;
-    onPress: () => void;
+    /**
+     * If true, the link is not pressable and a disabled style is applied. The default value is false.
+     */
+    isDisabled?: boolean;
 }
 
-export interface Props extends OwnProps, TextProps {}
+interface Props extends OwnProps, TextProps {}
 
 const Link: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, disabled = false, onPress } = props;
+    const { children, isDisabled = false, onPress } = props;
 
     return (
         <Text
-            color={disabled ? 'disabled' : 'success'}
             {...props}
-            onPress={disabled ? undefined : onPress}
+            color={isDisabled ? 'disabled' : 'success'}
+            onPress={isDisabled ? undefined : onPress}
             weight="bold"
         >
             {children}

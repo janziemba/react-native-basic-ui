@@ -1,17 +1,22 @@
 import * as React from 'react';
-import { Animated, Insets, Pressable } from 'react-native';
+import { Animated, GestureResponderEvent, Pressable, PressableProps } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-interface Props {
-    children: React.ReactNode;
-    disabled?: boolean;
-    hitSlop?: Insets;
-    onPress: () => void;
+interface OwnProps {
+    /**
+     * Called when a single tap gesture is detected.
+     */
+    onPress: (event: GestureResponderEvent) => void;
+    /**
+     * A scale of the component when pressed. The default value is 0.95.
+     */
     scale?: number;
 }
 
+export interface Props extends OwnProps, Omit<PressableProps, 'onPress'> {}
+
 const Scalable: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, disabled, hitSlop, onPress, scale = 0.95 } = props;
+    const { children, disabled = false, onPress, scale = 0.95 } = props;
 
     const animatedValue = React.useRef(new Animated.Value(0)).current;
 
@@ -46,8 +51,8 @@ const Scalable: React.FunctionComponent<Props> = (props: Props) => {
 
     return (
         <Pressable
-            disabled={disabled}
-            hitSlop={hitSlop}
+            {...props}
+            disabled={disabled || !onPress}
             onPress={handlePressDebounced}
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}

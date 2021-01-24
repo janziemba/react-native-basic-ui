@@ -5,6 +5,9 @@ import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
 interface Props {
+    /**
+     * An actual text or an Icon and a text.
+     */
     children?: React.ReactNode | string;
 }
 
@@ -13,11 +16,7 @@ const Subheading: React.FunctionComponent<Props> = (props: Props) => {
 
     const styles: Styles = useStyles(injectTheme);
 
-    return (
-        <Text allowFontScaling={false} style={styles.text}>
-            {children}
-        </Text>
-    );
+    return <Text style={styles.text}>{children}</Text>;
 };
 
 export default Subheading;

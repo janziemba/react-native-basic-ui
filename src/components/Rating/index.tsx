@@ -1,26 +1,26 @@
 import * as React from 'react';
 
 import { useStyles } from '../../theme';
-import Icon from '../Icon';
+import Icon, { Props as IconProps } from '../Icon';
 import RowContainer from '../RowContainer';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+interface OwnProps {
     children?: React.ReactNode;
-    size: number;
-    value?: number;
+    /**
+     * A value of the rating between 0 and 5. The default value is 5.
+     */
+    value: number;
 }
 
+interface Props extends OwnProps, Pick<IconProps, 'size'> {}
+
 const Rating: React.FunctionComponent<Props> = (props: Props) => {
-    const { size, value } = props;
+    const { size, value = 5 } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
     const renderEmptyIcons = (): React.ReactNode[] | null => {
-        if (!value) {
-            return null;
-        }
-
         const nearestHalf = Math.round(value * 2) / 2;
         const activeCount =
             nearestHalf % 1 === 0 && nearestHalf > value ? Math.ceil(value) : Math.floor(value);
@@ -43,10 +43,6 @@ const Rating: React.FunctionComponent<Props> = (props: Props) => {
     };
 
     const renderFullIcons = (): React.ReactNode[] | null => {
-        if (!value) {
-            return null;
-        }
-
         const nearestHalf = Math.round(value * 2) / 2;
         const count =
             nearestHalf % 1 === 0 && nearestHalf > value ? Math.ceil(value) : Math.floor(value);
@@ -62,10 +58,6 @@ const Rating: React.FunctionComponent<Props> = (props: Props) => {
     };
 
     const renderHalfIcon = (): React.ReactNode => {
-        if (!value) {
-            return null;
-        }
-
         const nearestHalf = Math.round(value * 2) / 2;
         const shouldShow = nearestHalf % 1 > 0;
 
@@ -75,10 +67,6 @@ const Rating: React.FunctionComponent<Props> = (props: Props) => {
 
         return <Icon color={styles.icon.color} name="star-half" size={size} />;
     };
-
-    if (value === undefined) {
-        return null;
-    }
 
     return (
         <RowContainer>

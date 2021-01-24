@@ -7,16 +7,18 @@ import injectTheme, { Styles } from './styles';
 type Size = 'tiny' | 'small' | 'medium' | 'large' | 'huge' | 'gigantic';
 
 interface Props {
-    children?: React.ReactNode;
+    /**
+     * A size of the space. The default value is large.
+     */
     size?: Size;
 }
 
 const Spacer: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, size = 'large' } = props;
+    const { size = 'large' } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
-    return <View style={styles[size]}>{children}</View>;
+    return <View style={styles[size]} />;
 };
 
 export default Spacer;

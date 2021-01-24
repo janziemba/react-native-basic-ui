@@ -5,6 +5,9 @@ import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
 interface Props {
+    /**
+     * A vertical alignment of the content. The default value is center.
+     */
     align?: 'top' | 'center' | 'bottom';
     children?: React.ReactNode;
 }

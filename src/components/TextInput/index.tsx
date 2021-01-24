@@ -11,12 +11,14 @@ import {
 import { useStyles, useTheme } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
-interface Props extends Omit<TextInputProps, 'editable'> {
+interface OwnProps {
     /**
-     * If true, text is not editable and a disabled style is applied. The default value is false.
+     * If true, the text is not editable and a disabled style is applied. The default value is false.
      */
     isDisabled?: boolean;
 }
+
+interface Props extends OwnProps, Omit<TextInputProps, 'editable'> {}
 
 const TextInput: React.ForwardRefExoticComponent<
     Props & React.RefAttributes<RNTextInput>

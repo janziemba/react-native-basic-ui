@@ -2,22 +2,38 @@ import * as React from 'react';
 import { Insets, View } from 'react-native';
 
 import { useStyles, useTheme } from '../../theme';
-import Icon, { IconSet } from '../Icon';
+import Icon, { Props as IconProps } from '../Icon';
 import LinearGradient from '../LinearGradient';
-import Scalable from '../Scalable';
+import Scalable, { Props as ScalableProps } from '../Scalable';
 import Text from '../Text';
 import injectTheme, { Styles } from './styles';
 
 const hitSlop: Insets = { bottom: 10, left: 10, right: 10, top: 10 };
 
-export interface Props {
-    disabled?: boolean;
+interface OwnProps {
+    /**
+     * A color of the button. The default value is primary.
+     */
     color?: 'black' | 'danger' | 'google' | 'primary' | 'success' | 'warning';
-    icon?: string;
-    iconSet?: IconSet;
-    onPress: () => void;
+    /**
+     * If true, the button is not pressable and a disabled style is applied. The default value is false.
+     */
+    disabled?: boolean;
+    /**
+     * A name of the icon.
+     */
+    icon?: IconProps['name'];
+    /**
+     * An icon set which should be used.
+     */
+    iconSet?: IconProps['iconSet'];
+    /**
+     * A text of the button.
+     */
     text: string;
 }
+
+export interface Props extends OwnProps, Pick<ScalableProps, 'onPress'> {}
 
 const Button: React.FunctionComponent<Props> = (props: Props) => {
     const { color = 'primary', disabled, icon, iconSet, onPress, text } = props;

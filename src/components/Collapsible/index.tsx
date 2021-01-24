@@ -7,7 +7,13 @@ import Link from '../Link';
 import Text from '../Text';
 
 interface Props {
+    /**
+     * A hidden content.
+     */
     content: string;
+    /**
+     * A visible title.
+     */
     title: string;
 }
 

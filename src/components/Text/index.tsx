@@ -4,9 +4,9 @@ import { Text as RNText, TextProps, TextStyle } from 'react-native';
 import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
-export interface OwnProps {
+interface OwnProps {
     /**
-     * An alignment of the text.
+     * An alignment of the text. The default value is left.
      */
     align?: 'center' | 'justify' | 'left' | 'right';
     /**
@@ -14,7 +14,7 @@ export interface OwnProps {
      */
     children?: React.ReactNode | string;
     /**
-     * A color of the text.
+     * A color of the text. The default value is dark.
      */
     color?:
         | 'black'
@@ -28,20 +28,20 @@ export interface OwnProps {
         | 'warning'
         | 'white';
     /**
-     * A size of the text.
+     * A size of the text. The default value is medium.
      */
     size?: 'large' | 'medium' | 'small';
     /**
-     * A style (decoration) of the text.
+     * A style (decoration) of the text. The default value is normal.
      */
     style?: 'normal' | 'italic';
     /**
-     * A weight of the text.
+     * A weight of the text. The default value is medium.
      */
     weight?: 'bold' | 'medium';
 }
 
-interface Props extends OwnProps, Omit<TextProps, 'style'> {}
+export interface Props extends OwnProps, Omit<TextProps, 'style'> {}
 
 const Text: React.FunctionComponent<Props> = (props: Props) => {
     const {

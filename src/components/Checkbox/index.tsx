@@ -8,7 +8,13 @@ import injectTheme, { Styles } from './styles';
 
 interface Props {
     children?: React.ReactNode | string;
+    /**
+     * A state of the checkbox.
+     */
     isChecked?: boolean;
+    /**
+     * A callback called when the checkbox is pressed.
+     */
     onChange: (isChecked: boolean) => void;
 }
 
