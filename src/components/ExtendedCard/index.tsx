@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GestureResponderEvent, Image, ImageProps, View } from 'react-native';
+import { Image, ImageProps, View } from 'react-native';
 
 import { useStyles } from '../../theme';
 import Label from '../Label';
