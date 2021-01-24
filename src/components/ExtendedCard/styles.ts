@@ -4,8 +4,6 @@ import { Theme } from '../../theme/context';
 
 export interface Styles {
     container: ViewStyle;
-    containerFirst: ViewStyle;
-    containerLast: ViewStyle;
     image: ImageStyle;
     imageContainer: ViewStyle;
     linearGradient: ViewStyle;
@@ -18,12 +16,6 @@ const injectTheme = ({ colors, radiuses, spacing }: Theme) =>
         container: {
             marginHorizontal: spacing.large,
             marginVertical: spacing.small,
-        },
-        containerFirst: {
-            paddingTop: spacing.large,
-        },
-        containerLast: {
-            paddingBottom: spacing.large,
         },
         image: {
             flex: 1,

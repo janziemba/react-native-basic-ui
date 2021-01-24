@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Image, ImageProps, View, ViewStyle } from 'react-native';
+import { Image, ImageProps, View } from 'react-native';
 
 import { useStyles } from '../../theme';
 import Label from '../Label';
@@ -15,8 +15,6 @@ import injectTheme, { Styles } from './styles';
 export interface Props {
     imageDefaultSource?: ImageProps['defaultSource'];
     imageSource: ImageProps['source'];
-    isFirst?: boolean;
-    isLast?: boolean;
     labels?: string[];
     onPress: () => void;
     rating?: number;
@@ -29,8 +27,6 @@ const ExtendedCard: React.FunctionComponent<Props> = (props: Props) => {
     const {
         imageDefaultSource,
         imageSource,
-        isFirst = false,
-        isLast = false,
         labels,
         onPress,
         rating,
@@ -40,20 +36,6 @@ const ExtendedCard: React.FunctionComponent<Props> = (props: Props) => {
     } = props;
 
     const styles: Styles = useStyles(injectTheme);
-
-    const mergedContainerStyles = React.useMemo((): ViewStyle[] => {
-        const result = [styles.container];
-
-        if (isFirst) {
-            result.push(styles.containerFirst);
-        }
-
-        if (isLast) {
-            result.push(styles.containerLast);
-        }
-
-        return result;
-    }, [isFirst, isLast, styles]);
 
     const renderRating = (): React.ReactNode => {
         if (!rating) {
@@ -103,7 +85,7 @@ const ExtendedCard: React.FunctionComponent<Props> = (props: Props) => {
 
     return (
         <Scalable onPress={onPress}>
-            <View style={mergedContainerStyles}>
+            <View style={styles.container}>
                 <Shadow>
                     <View style={styles.imageContainer}>
                         <Image
