@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { Animated, GestureResponderEvent, TouchableWithoutFeedback, TouchableWithoutFeedbackProps } from 'react-native';
+import {
+    Animated,
+    GestureResponderEvent,
+    TouchableWithoutFeedback,
+    TouchableWithoutFeedbackProps,
+} from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
 interface OwnProps {
