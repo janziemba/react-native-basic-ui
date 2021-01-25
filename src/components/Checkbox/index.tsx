@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Pressable, View } from 'react-native';
+import { TouchableWithoutFeedback, View } from 'react-native';
 
 import { useStyles, useTheme } from '../../theme';
 import Icon from '../Icon';
@@ -32,14 +32,14 @@ const Checkbox: React.FunctionComponent<Props> = (props: Props) => {
     }, [isChecked, onChange]);
 
     return (
-        <Pressable onPress={handlePress}>
+        <TouchableWithoutFeedback onPress={handlePress}>
             <RowContainer align="top">
                 <View style={styles.iconContainer}>
                     <Icon color={iconColor} iconSet="MaterialCommunityIcons" name={iconName} />
                 </View>
                 <View style={styles.contentContainer}>{children}</View>
             </RowContainer>
-        </Pressable>
+        </TouchableWithoutFeedback>
     );
 };
 

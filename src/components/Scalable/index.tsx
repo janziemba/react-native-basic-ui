@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Animated, GestureResponderEvent, Pressable, PressableProps } from 'react-native';
+import { Animated, GestureResponderEvent, TouchableWithoutFeedback, TouchableWithoutFeedbackProps } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
 interface OwnProps {
+    children: React.ReactNode;
     /**
      * Called when a single tap gesture is detected.
      */
@@ -13,7 +14,7 @@ interface OwnProps {
     scale?: number;
 }
 
-export interface Props extends OwnProps, Omit<PressableProps, 'onPress'> {}
+export interface Props extends OwnProps, Omit<TouchableWithoutFeedbackProps, 'onPress'> {}
 
 const Scalable: React.FunctionComponent<Props> = (props: Props) => {
     const { children, disabled = false, onPress, scale = 0.95 } = props;
@@ -50,7 +51,7 @@ const Scalable: React.FunctionComponent<Props> = (props: Props) => {
     }, [pressOutAnimation]);
 
     return (
-        <Pressable
+        <TouchableWithoutFeedback
             {...props}
             disabled={disabled || !onPress}
             onPress={handlePressDebounced}
@@ -64,7 +65,7 @@ const Scalable: React.FunctionComponent<Props> = (props: Props) => {
             >
                 {children}
             </Animated.View>
-        </Pressable>
+        </TouchableWithoutFeedback>
     );
 };
 
