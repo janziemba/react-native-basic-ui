@@ -148,7 +148,7 @@ Coming soon
 
 Check this [Expo](https://snack.expo.io/@janziemba/react-native-basic-ui).
 
-# FAQ
+## FAQ
 
 **Is it compatible with Expo?**
 
@@ -172,4 +172,4 @@ Check out my <a href="https://react-native.cz" title="React Native Developer" ta
 
 ## License
 
-[MIT](LICENSE), © 2021 Jan Ziemba
+[MIT](LICENSE.md), © 2021 Jan Ziemba
