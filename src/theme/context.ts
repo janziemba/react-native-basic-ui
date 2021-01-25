@@ -24,6 +24,4 @@ export const defaultTheme = {
 
 const ThemeContext = React.createContext<Theme>(defaultTheme);
 
-export const ThemeProvider = ThemeContext.Provider;
-
 export default ThemeContext;

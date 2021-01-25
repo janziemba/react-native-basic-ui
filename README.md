@@ -56,19 +56,17 @@ const App = () => {
 But you can set your own primitives and overwrite the default theme. For example:
 
 ```jsx
-import { defaultTheme, ThemeProvider } from 'react-native-basic-ui';
+import { ThemeProvider } from 'react-native-basic-ui';
 
 const customTheme = {
-    ...defaultTheme,
     colors: {
-        ..defaultTheme.colors,
         primary: 'green',
     },
 };
 
 const App = () => {
     return (
-        <ThemeProvider value={customTheme}>
+        <ThemeProvider theme={customTheme}>
             ...
         </ThemeProvider>
     );
