@@ -12,11 +12,11 @@ const hitSlop: Insets = { bottom: 10, left: 10, right: 10, top: 10 };
 
 interface OwnProps {
     /**
-     * A color of the button. The default value is primary.
+     * A color of the button. The default value is `primary`.
      */
     color?: 'black' | 'danger' | 'google' | 'primary' | 'success' | 'warning';
     /**
-     * If true, the button is not pressable and a disabled style is applied. The default value is false.
+     * If `true`, the button is not pressable and a disabled style is applied. The default value is `false`.
      */
     disabled?: boolean;
     /**
@@ -24,7 +24,7 @@ interface OwnProps {
      */
     icon?: IconProps['name'];
     /**
-     * An icon set which should be used.
+     * An icon set which should be used. The default value is `MaterialIcons`.
      */
     iconSet?: IconProps['iconSet'];
     /**

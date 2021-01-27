@@ -7,15 +7,15 @@ import injectTheme, { Styles } from './styles';
 interface Props {
     children?: React.ReactNode;
     /**
-     * If true, alignItems: 'center' style is applied. The default value is true.
+     * If `true`, `alignItems: 'center'` style is applied. The default value is `true`.
      */
     horizontal?: boolean;
     /**
-     * If true, alignSelf: 'center' style is applied. The default value is false.
+     * If `true`, `alignSelf: 'center'` style is applied. The default value is `false`.
      */
     self?: boolean;
     /**
-     * If true, justifyContent: 'center' style is applied. The default value is true.
+     * If `true`, `justifyContent: 'center'` style is applied. The default value is `true`.
      */
     vertical?: boolean;
 }

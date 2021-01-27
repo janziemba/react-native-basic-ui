@@ -7,7 +7,7 @@ import injectTheme, { Styles } from './styles';
 
 interface OwnProps {
     /**
-     * A color of the label. The default value is success.
+     * A color of the label. The default value is `success`.
      */
     color?: 'info' | 'success' | 'warning';
 }

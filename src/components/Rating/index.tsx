@@ -6,9 +6,8 @@ import RowContainer from '../RowContainer';
 import injectTheme, { Styles } from './styles';
 
 interface OwnProps {
-    children?: React.ReactNode;
     /**
-     * A value of the rating between 0 and 5. The default value is 5.
+     * A value of the rating between 0 and 5. The default value is `5`.
      */
     value: number;
 }

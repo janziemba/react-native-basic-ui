@@ -12,7 +12,7 @@ const hitSlop: Insets = { bottom: 10, left: 10, right: 10, top: 10 };
 
 interface OwnProps {
     /**
-     * If true, the button is not pressable. The default value is false.
+     * If `true`, the button is not pressable. The default value is `false`.
      */
     disabled?: boolean;
     /**
@@ -20,7 +20,7 @@ interface OwnProps {
      */
     icon: IconProps['name'];
     /**
-     * An icon set which should be used.
+     * An icon set which should be used. The default value is `MaterialIcons`.
      */
     iconSet?: IconProps['iconSet'];
     /**

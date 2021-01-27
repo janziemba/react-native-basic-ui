@@ -6,7 +6,7 @@ import injectTheme, { Styles } from './styles';
 
 interface OwnProps {
     /**
-     * An alignment of the text. The default value is left.
+     * An alignment of the text. The default value is `left`.
      */
     align?: 'center' | 'justify' | 'left' | 'right';
     /**
@@ -14,7 +14,7 @@ interface OwnProps {
      */
     children?: React.ReactNode | string;
     /**
-     * A color of the text. The default value is dark.
+     * A color of the text. The default value is `dark`.
      */
     color?:
         | 'black'
@@ -28,15 +28,15 @@ interface OwnProps {
         | 'warning'
         | 'white';
     /**
-     * A size of the text. The default value is medium.
+     * A size of the text. The default value is `medium`.
      */
     size?: 'large' | 'medium' | 'small';
     /**
-     * A style (decoration) of the text. The default value is normal.
+     * A style (decoration) of the text. The default value is `normal`.
      */
     style?: 'normal' | 'italic';
     /**
-     * A weight of the text. The default value is medium.
+     * A weight of the text. The default value is `medium`.
      */
     weight?: 'bold' | 'medium';
 }

@@ -4,7 +4,7 @@ import Text, { Props as TextProps } from '../Text';
 
 interface OwnProps {
     /**
-     * If true, the link is not pressable and a disabled style is applied. The default value is false.
+     * If `true`, the link is not pressable and a disabled style is applied. The default value is `false`.
      */
     isDisabled?: boolean;
 }

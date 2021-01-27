@@ -8,7 +8,7 @@ type Size = 'tiny' | 'small' | 'medium' | 'large' | 'huge' | 'gigantic';
 
 interface Props {
     /**
-     * A size of the space. The default value is large.
+     * A size of the space. The default value is `large`.
      */
     size?: Size;
 }

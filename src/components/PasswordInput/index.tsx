@@ -16,7 +16,7 @@ import injectTheme, { Styles } from './styles';
 
 interface OwnProps {
     /**
-     * If true, the text is not editable and a disabled style is applied. The default value is false.
+     * If `true`, the text is not editable and a disabled style is applied. The default value is `false`.
      */
     isDisabled?: boolean;
 }

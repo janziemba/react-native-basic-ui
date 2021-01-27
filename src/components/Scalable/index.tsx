@@ -14,7 +14,7 @@ interface OwnProps {
      */
     onPress: (event: GestureResponderEvent) => void;
     /**
-     * A scale of the component when pressed. The default value is 0.95.
+     * A scale of the component when pressed. The default value is `0.95`.
      */
     scale?: number;
 }

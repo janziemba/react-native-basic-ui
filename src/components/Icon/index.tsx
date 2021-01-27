@@ -22,11 +22,11 @@ export type IconSet =
 
 export interface Props {
     /**
-     * A color of the icon. The default value is dark.
+     * A color of the icon. The default value is dark - `#3d3d3d'`.
      */
     color?: ColorValue;
     /**
-     * An icon set which should be used.
+     * An icon set which should be used. The default value is `MaterialIcons`.
      */
     iconSet?: IconSet;
     /**
@@ -34,7 +34,7 @@ export interface Props {
      */
     name: string;
     /**
-     * A size of the icon. The default value is 24.
+     * A size of the icon. The default value is `24`.
      */
     size?: number;
 }
