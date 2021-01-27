@@ -34,7 +34,7 @@ Also, complete installation of [react-native-vector-icons](https://github.com/ob
 
 ## Documentation
 
-See [react-native-basic-ui.github.io](https://react-native-basic-ui.github.io).
+See [janziemba.github.io/react-native-basic-ui](https://janziemba.github.io/react-native-basic-ui).
 
 ## Example
 

@@ -2,7 +2,7 @@ module.exports = {
     title: 'React Native Basic UI',
     tagline:
         'Easy to use UI components for React Native. Creating an app has never been easier! 🎉',
-    url: 'https://react-native-basic-ui.github.io',
+    url: 'https://janziemba.github.io/react-native-basic-ui',
     baseUrl: '/react-native-basic-ui/',
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
