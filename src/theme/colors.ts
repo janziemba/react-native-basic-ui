@@ -3,6 +3,7 @@ export interface Colors {
     dark: string;
     danger: string;
     disabled: string;
+    facebook: string;
     google: string;
     info: string;
     light: string;
@@ -10,6 +11,7 @@ export interface Colors {
     primary: string;
     star: string;
     success: string;
+    twitter: string;
     warning: string;
     white: string;
 }
@@ -19,6 +21,7 @@ const colors: Colors = {
     dark: '#3d3d3d',
     danger: '#f6511d',
     disabled: '#cccccc',
+    facebook: '#1877f2',
     google: '#4285f4',
     info: '#00a6ed',
     light: '#f5f5f5',
@@ -26,6 +29,7 @@ const colors: Colors = {
     primary: '#0d2c54',
     star: '#ffd837',
     success: '#7fb800',
+    twitter: '#1da1f2',
     warning: '#ffb400',
     white: '#ffffff',
 };

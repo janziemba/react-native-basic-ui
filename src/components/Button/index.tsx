@@ -14,7 +14,7 @@ interface OwnProps {
     /**
      * A color of the button. The default value is `primary`.
      */
-    color?: 'black' | 'danger' | 'google' | 'primary' | 'success' | 'warning';
+    color?: 'black' | 'danger' | 'facebook' | 'google' | 'primary' | 'success' | 'twitter' | 'warning';
     /**
      * If `true`, the button is not pressable and a disabled style is applied. The default value is `false`.
      */
