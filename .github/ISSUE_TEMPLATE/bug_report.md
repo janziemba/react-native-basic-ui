@@ -5,7 +5,7 @@ labels: "🐛 bug"
 ---
 
 <!--
-  You need help with something, please use https://stackoverflow.com/questions/tagged/react-native-basic-ui instead.
+  If you need help with something, please use https://github.com/janziemba/react-native-basic-ui/discussions or https://stackoverflow.com/questions/tagged/react-native-basic-ui instead.
 -->
 
 ## Description
