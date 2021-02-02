@@ -1,7 +1,8 @@
 import deepmerge from 'deepmerge';
 import * as React from 'react';
 
-import ThemeContext, { defaultTheme, Theme } from './context';
+import ThemeContext from './context'
+import defaultTheme, { Theme } from './defaultTheme';
 
 type DeepPartial<T> = {
     [P in keyof T]?: DeepPartial<T[P]>;

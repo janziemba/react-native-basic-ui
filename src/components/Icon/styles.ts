@@ -1,6 +1,6 @@
 import { StyleSheet, TextStyle } from 'react-native';
 
-import { Theme } from '../../theme/context';
+import { Theme } from '../../theme';
 
 export interface Styles {
     icon: TextStyle;

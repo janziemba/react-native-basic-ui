@@ -1,6 +1,6 @@
 import { ImageStyle, StyleSheet, ViewStyle } from 'react-native';
 
-import { Theme } from '../../theme/context';
+import { Theme } from '../../theme';
 
 export interface Styles {
     container: ViewStyle;
