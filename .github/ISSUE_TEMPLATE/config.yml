@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+    - name: 🚀 I want to discuss or propose a change to this library.
+      url: https://github.com/janziemba/react-native-basic-ui/discussions/new?category_id=32395650
+      about: You have an idea that could make this library better, or you want to discuss some aspect of the library. Instead of creating an issue, please use Discussions.
+    - name: ❓ I have a question
+      url: https://github.com/janziemba/react-native-basic-ui/discussions/new?category_id=32395649
+      about: You need help with something. Instead of creating an issue, please use Discussions or Stack Overflow.
