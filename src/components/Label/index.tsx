@@ -10,12 +10,16 @@ interface OwnProps {
      * A color of the label. The default value is `success`.
      */
     color?: 'info' | 'success' | 'warning';
+    /**
+     * Text props.
+     */
+    textProps?: TextProps;
 }
 
 interface Props extends OwnProps, Pick<TextProps, 'children'> {}
 
 const Label: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, color = 'success' } = props;
+    const { children, color = 'success', textProps } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
@@ -34,9 +38,11 @@ const Label: React.FunctionComponent<Props> = (props: Props) => {
         return result;
     }, [color, styles]);
 
+    const rnTextProps = React.useMemo(() => ({ numberOfLines: 1 }), []);
+
     return (
         <View style={mergedStyles}>
-            <Text color="white" numberOfLines={1} size="small">
+            <Text color="white" rnTextProps={rnTextProps} size="small" {...textProps}>
                 {children}
             </Text>
         </View>

@@ -3,84 +3,106 @@ import { StyleSheet, TextStyle } from 'react-native';
 import { Theme } from '../../theme';
 
 export interface Styles {
+    alignCenter: TextStyle;
+    alignJustify: TextStyle;
+    alignLeft: TextStyle;
+    alignRight: TextStyle;
     base: TextStyle;
-    black: TextStyle;
-    bold: TextStyle;
-    centered: TextStyle;
-    danger: TextStyle;
-    disabled: TextStyle;
-    info: TextStyle;
-    italic: TextStyle;
-    justified: TextStyle;
-    large: TextStyle;
-    light: TextStyle;
-    primary: TextStyle;
-    right: TextStyle;
-    small: TextStyle;
-    success: TextStyle;
-    warning: TextStyle;
-    white: TextStyle;
+    colorBlack: TextStyle;
+    colorDanger: TextStyle;
+    colorDisabled: TextStyle;
+    colorInfo: TextStyle;
+    colorLight: TextStyle;
+    colorPrimary: TextStyle;
+    colorSuccess: TextStyle;
+    colorWarning: TextStyle;
+    colorWhite: TextStyle;
+    sizeHuge: TextStyle;
+    sizeLarge: TextStyle;
+    sizeMedium: TextStyle;
+    sizeSmall: TextStyle;
+    sizeTiny: TextStyle;
+    styleItalic: TextStyle;
+    styleNormal: TextStyle;
+    weightBold: TextStyle;
+    weightMedium: TextStyle;
 }
 
 const injectTheme = ({ colors, typography }: Theme) =>
     StyleSheet.create<Styles>({
-        base: {
-            color: colors.dark,
-            fontFamily: typography.fontFamilies.medium,
-            lineHeight: typography.lineHeights.medium,
-            fontSize: typography.fontSizes.medium,
-            textAlign: typography.alignment.text,
-            textAlignVertical: 'center',
-        },
-        black: {
-            color: colors.black,
-        },
-        bold: {
-            fontFamily: typography.fontFamilies.bold,
-        },
-        centered: {
+        alignCenter: {
             textAlign: 'center',
         },
-        danger: {
-            color: colors.danger,
-        },
-        disabled: {
-            color: colors.disabled,
-        },
-        info: {
-            color: colors.info,
-        },
-        italic: {
-            fontStyle: 'italic',
-        },
-        justified: {
+        alignJustify: {
             textAlign: 'justify',
         },
-        large: {
+        alignLeft: {
+            textAlign: 'left',
+        },
+        alignRight: {
+            textAlign: 'right',
+        },
+        base: {
+            textAlignVertical: 'center',
+        },
+        colorBlack: {
+            color: colors.black,
+        },
+        colorDanger: {
+            color: colors.danger,
+        },
+        colorDisabled: {
+            color: colors.disabled,
+        },
+        colorInfo: {
+            color: colors.info,
+        },
+        colorLight: {
+            color: colors.light,
+        },
+        colorPrimary: {
+            color: colors.primary,
+        },
+        colorSuccess: {
+            color: colors.success,
+        },
+        colorWarning: {
+            color: colors.warning,
+        },
+        colorWhite: {
+            color: colors.white,
+        },
+        sizeHuge: {
+            fontSize: typography.fontSizes.huge,
+            lineHeight: typography.lineHeights.huge,
+        },
+        sizeLarge: {
             fontSize: typography.fontSizes.large,
             lineHeight: typography.lineHeights.large,
         },
-        light: {
-            color: colors.light,
+        sizeMedium: {
+            fontSize: typography.fontSizes.medium,
+            lineHeight: typography.lineHeights.medium,
         },
-        primary: {
-            color: colors.primary,
-        },
-        right: {
-            textAlign: 'right',
-        },
-        small: {
+        sizeSmall: {
             fontSize: typography.fontSizes.small,
             lineHeight: typography.lineHeights.small,
         },
-        success: {
-            color: colors.success,
+        sizeTiny: {
+            fontSize: typography.fontSizes.tiny,
+            lineHeight: typography.lineHeights.tiny,
         },
-        warning: {
-            color: colors.warning,
+        styleItalic: {
+            fontStyle: 'italic',
         },
-        white: {
-            color: colors.white,
+        styleNormal: {
+            fontStyle: 'normal',
+        },
+        weightBold: {
+            fontFamily: typography.fontFamilies.bold,
+        },
+        weightMedium: {
+            fontFamily: typography.fontFamilies.medium,
         },
     });
 

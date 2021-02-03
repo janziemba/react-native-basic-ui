@@ -2,27 +2,36 @@ import * as React from 'react';
 import {
     Animated,
     GestureResponderEvent,
+    Insets,
     TouchableWithoutFeedback,
     TouchableWithoutFeedbackProps,
 } from 'react-native';
 import { useDebouncedCallback } from 'use-debounce';
 
-interface OwnProps {
+const hitSlop: Insets = { bottom: 10, left: 10, right: 10, top: 10 };
+
+export interface Props {
     children: React.ReactNode;
+    /**
+     * If `true`, the scalable is not pressable. The default value is `false`.
+     */
+    isDisabled?: boolean;
     /**
      * Called when a single tap gesture is detected.
      */
     onPress: (event: GestureResponderEvent) => void;
+    /**
+     * React Native's TouchableWithoutFeedback props.
+     */
+    rnTouchableWithoutFeedbackProps?: TouchableWithoutFeedbackProps;
     /**
      * A scale of the component when pressed. The default value is `0.95`.
      */
     scale?: number;
 }
 
-export interface Props extends OwnProps, Omit<TouchableWithoutFeedbackProps, 'onPress'> {}
-
 const Scalable: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, disabled = false, onPress, scale = 0.95 } = props;
+    const { children, isDisabled = false, onPress, rnTouchableWithoutFeedbackProps, scale = 0.95 } = props;
 
     const animatedValue = React.useRef(new Animated.Value(0)).current;
 
@@ -57,11 +66,12 @@ const Scalable: React.FunctionComponent<Props> = (props: Props) => {
 
     return (
         <TouchableWithoutFeedback
-            {...props}
-            disabled={disabled || !onPress}
+            disabled={isDisabled || !onPress}
+            hitSlop={hitSlop}
             onPress={handlePressDebounced}
             onPressIn={handlePressIn}
             onPressOut={handlePressOut}
+            {...rnTouchableWithoutFeedbackProps}
         >
             <Animated.View
                 style={{

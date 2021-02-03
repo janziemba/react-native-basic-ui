@@ -5,7 +5,15 @@ title: ActionButton
 
 ## Props
 
-### `disabled`
+### `iconProps`
+
+Check [Icon documentation](Icon.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
+### `isDisabled`
 
 If `true`, the button is not pressable. The default value is `false`.
 
@@ -13,21 +21,29 @@ If `true`, the button is not pressable. The default value is `false`.
 | -------| -------- |
 | string | No       |
 
-### `icon`
+### `linearGradientProps`
 
-A name of the icon.
+Check [LinearGradient documentation](LinearGradient.md#props).
 
 | Type   | Required |
 | -------| -------- |
-| string | No       |
+| object | No       |
 
-### `iconSet`
+### `onPress`
 
-An icon set which should be used. The default value is `MaterialIcons`.
+Called when a single tap gesture is detected.
 
-| Type                       | Required |
-| ---------------------------| -------- |
-| enum('AntDesign', 'Entypo', 'EvilIcons', 'Feather', 'FontAwesome', 'Fontisto', 'Foundation', 'Ionicons', 'MaterialCommunityIcons', 'MaterialIcons', 'Octicons', 'SimpleLineIcons', 'Zocial') | No       |
+| Type     | Required |
+| ---------| -------- |
+| function | Yes      |
+
+### `scalableProps`
+
+Check [Scalable documentation](Scalable.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
 
 ### `text`
 
@@ -36,3 +52,11 @@ A text of the button.
 | Type   | Required |
 | -------| -------- |
 | string | Yes      |
+
+### `textProps`
+
+Check [Text documentation](Text.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |

@@ -4,29 +4,60 @@ import {
     Platform,
     TextInput as RNTextInput,
     TextInputFocusEventData,
-    TextInputProps,
+    TextInputProps as RNTextInputProps,
     View,
     ViewStyle,
 } from 'react-native';
 
 import { useStyles, useTheme } from '../../theme';
-import Icon from '../Icon';
+import Icon, { Props as IconProps } from '../Icon';
 import Scalable from '../Scalable';
 import injectTheme, { Styles } from './styles';
 
-interface OwnProps {
+interface Props {
+    /**
+     * Icon props.
+     */
+    iconProps?: IconProps;
     /**
      * If `true`, the text is not editable and a disabled style is applied. The default value is `false`.
      */
     isDisabled?: boolean;
+    /**
+     * Callback that is called when the text input is blurred.
+     */
+    onBlur?: (event: NativeSyntheticEvent<TextInputFocusEventData>) => void;
+    /**
+     * Callback that is called when the text input's text changes. Changed text is passed as
+     * an argument to the callback handler.
+     */
+    onChange?: (text: string) => void;
+    /**
+     * Callback that is called when the text input is focused.
+     */
+    onFocus?: (event: NativeSyntheticEvent<TextInputFocusEventData>) => void;
+    /**
+     * React Native's TextInput props.
+     */
+    rnTextInputProps?: RNTextInputProps;
+    /**
+     * A value of the input.
+     */
+    value?: string;
 }
-
-interface Props extends OwnProps, Omit<TextInputProps, 'editable'> {}
 
 const PasswordInput: React.ForwardRefExoticComponent<
     Props & React.RefAttributes<RNTextInput>
 > = React.forwardRef<RNTextInput, Props>((props: Props, ref?: React.Ref<RNTextInput>) => {
-    const { isDisabled = false, onBlur, onFocus } = props;
+    const {
+        iconProps,
+        isDisabled = false,
+        onBlur,
+        onChange,
+        onFocus,
+        rnTextInputProps,
+        value,
+    } = props;
 
     const styles: Styles = useStyles(injectTheme);
     const { colors } = useTheme();
@@ -91,14 +122,16 @@ const PasswordInput: React.ForwardRefExoticComponent<
     return (
         <View style={styles.container}>
             <RNTextInput
-                {...props}
                 editable={!isDisabled && isEditable}
                 onBlur={handleBlur}
+                onChangeText={onChange}
                 onFocus={handleFocus}
                 placeholderTextColor={colors.disabled}
                 ref={ref}
                 secureTextEntry={!isPasswordVisible}
                 style={mergedTextInputStyles}
+                value={value}
+                {...rnTextInputProps}
             />
             <View style={styles.iconContainer}>
                 <Scalable onPress={handleIconPress}>
@@ -106,6 +139,7 @@ const PasswordInput: React.ForwardRefExoticComponent<
                         color={colors.success}
                         iconSet="MaterialCommunityIcons"
                         name={isPasswordVisible ? 'eye-off' : 'eye'}
+                        {...iconProps}
                     />
                 </Scalable>
             </View>

@@ -1,48 +1,68 @@
 import * as React from 'react';
-import { Insets, View } from 'react-native';
+import { GestureResponderEvent, View } from 'react-native';
 
 import { linearGradients, useStyles } from '../../theme';
 import Icon, { Props as IconProps } from '../Icon';
-import LinearGradient from '../LinearGradient';
+import LinearGradient, { Props as LinearGradientProps } from '../LinearGradient';
 import Scalable, { Props as ScalableProps } from '../Scalable';
-import Text from '../Text';
+import Text, { Props as TextProps } from '../Text';
 import injectTheme, { Styles } from './styles';
 
-const hitSlop: Insets = { bottom: 10, left: 10, right: 10, top: 10 };
-
-interface OwnProps {
+interface Props {
+    /**
+     * Icon props.
+     */
+    iconProps: IconProps;
     /**
      * If `true`, the button is not pressable. The default value is `false`.
      */
-    disabled?: boolean;
+    isDisabled?: boolean;
     /**
-     * A name of the icon.
+     * LinearGradient props.
      */
-    icon: IconProps['name'];
+    linearGradientProps?: LinearGradientProps;
     /**
-     * An icon set which should be used. The default value is `MaterialIcons`.
+     * Called when a single tap gesture is detected.
      */
-    iconSet?: IconProps['iconSet'];
+    onPress: (event: GestureResponderEvent) => void;
+    /**
+     * Scalable props.
+     */
+    scalableProps?: ScalableProps;
     /**
      * A text of the button.
      */
     text: string;
+    /**
+     * Text props.
+     */
+    textProps?: TextProps;
 }
 
-interface Props extends OwnProps, IconProps, Pick<ScalableProps, 'onPress'> {}
-
 const ActionButton: React.FunctionComponent<Props> = (props: Props) => {
-    const { disabled, icon, iconSet, onPress, text } = props;
+    const {
+        iconProps,
+        isDisabled,
+        linearGradientProps,
+        onPress,
+        scalableProps,
+        text,
+        textProps,
+    } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
     return (
-        <Scalable disabled={disabled || !onPress} hitSlop={hitSlop} onPress={onPress}>
+        <Scalable isDisabled={isDisabled || !onPress} onPress={onPress} {...scalableProps}>
             <View style={styles.container}>
-                <LinearGradient colors={linearGradients.success} style={styles.iconContainer}>
-                    <Icon color="white" iconSet={iconSet} name={icon} size={28} />
+                <LinearGradient
+                    colors={linearGradients.success}
+                    style={styles.iconContainer}
+                    {...linearGradientProps}
+                >
+                    <Icon color="white" size={28} {...iconProps} />
                 </LinearGradient>
-                <Text color="success" size="small" weight="bold">
+                <Text color="success" size="small" weight="bold" {...textProps}>
                     {text}
                 </Text>
             </View>

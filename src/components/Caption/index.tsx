@@ -1,27 +1,39 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
+import { TextProps as RNTextProps } from 'react-native';
 
-import { useStyles } from '../../theme';
-import injectTheme, { Styles } from './styles';
+import { useTheme } from '../../theme';
+import Spacer from '../Spacer';
+import Text, { Props as TextProps } from '../Text';
 
 interface Props {
     /**
      * An actual text or an Icon and a text.
      */
-    children?: React.ReactNode;
+    children?: React.ReactNode | string;
+    /**
+     * Text props.
+     */
+    textProps?: TextProps;
 }
 
 const Caption: React.FunctionComponent<Props> = (props: Props) => {
-    const { children } = props;
+    const { children, textProps } = props;
 
-    const styles: Styles = useStyles(injectTheme);
+    const { typography } = useTheme();
 
     return (
-        <View style={styles.container}>
-            <Text allowFontScaling={false} style={styles.text}>
+        <>
+            <Text
+                align={typography.alignment.caption}
+                color="primary"
+                size="large"
+                weight="bold"
+                {...textProps}
+            >
                 {children}
             </Text>
-        </View>
+            <Spacer size="tiny" />
+        </>
     );
 };
 
