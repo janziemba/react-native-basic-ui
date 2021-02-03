@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { TextProps as RNTextProps } from 'react-native';
 
 import { useTheme } from '../../theme';
 import Spacer from '../Spacer';
@@ -23,12 +22,7 @@ const Subheading: React.FunctionComponent<Props> = (props: Props) => {
 
     return (
         <>
-            <Text
-                align={typography.alignment.subheading}
-                size="large"
-                weight="bold"
-                {...textProps}
-            >
+            <Text align={typography.alignment.subheading} size="large" weight="bold" {...textProps}>
                 {children}
             </Text>
             <Spacer size="medium" />

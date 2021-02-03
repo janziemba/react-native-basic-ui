@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { TextProps as RNTextProps } from 'react-native';
 
 import { useTheme } from '../../theme';
 import Spacer from '../Spacer';

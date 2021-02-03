@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GestureResponderEvent, TextProps as RNTextProps } from 'react-native';
+import { GestureResponderEvent } from 'react-native';
 
 import Text, { Props as TextProps } from '../Text';
 

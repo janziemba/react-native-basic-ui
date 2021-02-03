@@ -46,7 +46,15 @@ interface Props {
 const TextInput: React.ForwardRefExoticComponent<
     Props & React.RefAttributes<RNTextInput>
 > = React.forwardRef<RNTextInput, Props>((props: Props, ref?: React.Ref<RNTextInput>) => {
-    const { hasError = false, isDisabled = false, onBlur, onChange, onFocus, rnTextInputProps, value } = props;
+    const {
+        hasError = false,
+        isDisabled = false,
+        onBlur,
+        onChange,
+        onFocus,
+        rnTextInputProps,
+        value,
+    } = props;
 
     const styles: Styles = useStyles(injectTheme);
     const { colors } = useTheme();

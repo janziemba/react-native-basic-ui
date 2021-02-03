@@ -38,12 +38,7 @@ interface Props {
     /**
      * A linear gradient of the button.
      */
-    linearGradient?:
-        | 'danger'
-        | 'info'
-        | 'primary'
-        | 'success'
-        | 'warning';
+    linearGradient?: 'danger' | 'info' | 'primary' | 'success' | 'warning';
     /**
      * LinearGradient props.
      */
@@ -90,9 +85,7 @@ const ActionButton: React.FunctionComponent<Props> = (props: Props) => {
     );
 
     const renderIcon = (): React.ReactElement => {
-        return (
-            <Icon color="white" size={28} {...iconProps} />
-        );
+        return <Icon color="white" size={28} {...iconProps} />;
     };
 
     const renderIconContainer = (): React.ReactElement => {
@@ -108,11 +101,7 @@ const ActionButton: React.FunctionComponent<Props> = (props: Props) => {
             );
         }
 
-        return (
-            <View style={mergedIconContainerStyles}>
-                {renderIcon()}
-            </View>
-        );
+        return <View style={mergedIconContainerStyles}>{renderIcon()}</View>;
     };
 
     return (

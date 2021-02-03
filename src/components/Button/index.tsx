@@ -42,12 +42,7 @@ export interface Props {
     /**
      * A linear gradient of the button.
      */
-    linearGradient?:
-        | 'danger'
-        | 'info'
-        | 'primary'
-        | 'success'
-        | 'warning';
+    linearGradient?: 'danger' | 'info' | 'primary' | 'success' | 'warning';
     /**
      * LinearGradient props.
      */

@@ -31,7 +31,13 @@ export interface Props {
 }
 
 const Scalable: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, isDisabled = false, onPress, rnTouchableWithoutFeedbackProps, scale = 0.95 } = props;
+    const {
+        children,
+        isDisabled = false,
+        onPress,
+        rnTouchableWithoutFeedbackProps,
+        scale = 0.95,
+    } = props;
 
     const animatedValue = React.useRef(new Animated.Value(0)).current;
 

@@ -109,7 +109,7 @@ const injectTheme = ({ colors, typography }: Theme) =>
         },
         weightMedium: {
             fontFamily: typography.fontFamilies.medium,
-            fontWeight: '600'
+            fontWeight: '600',
         },
     });
 
