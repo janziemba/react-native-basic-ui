@@ -1,74 +1,139 @@
 import * as React from 'react';
-import { Insets, View } from 'react-native';
+import { ActivityIndicator, GestureResponderEvent, View, ViewStyle } from 'react-native';
 
 import { useStyles, useTheme } from '../../theme';
+import { capitalize } from '../../utils';
 import Icon, { Props as IconProps } from '../Icon';
-import LinearGradient from '../LinearGradient';
+import LinearGradient, { Props as LinearGradientProps } from '../LinearGradient';
 import Scalable, { Props as ScalableProps } from '../Scalable';
-import Text from '../Text';
+import Text, { Props as TextProps } from '../Text';
 import injectTheme, { Styles } from './styles';
 
-const hitSlop: Insets = { bottom: 10, left: 10, right: 10, top: 10 };
-
-interface OwnProps {
+export interface Props {
     /**
      * A color of the button. The default value is `primary`.
      */
     color?:
         | 'black'
         | 'danger'
+        | 'dark'
+        | 'disabled'
         | 'facebook'
         | 'google'
+        | 'info'
+        | 'light'
         | 'primary'
         | 'success'
         | 'twitter'
-        | 'warning';
+        | 'warning'
+        | 'white';
+    /**
+     * Icon props.
+     */
+    iconProps?: IconProps;
     /**
      * If `true`, the button is not pressable and a disabled style is applied. The default value is `false`.
      */
-    disabled?: boolean;
+    isDisabled?: boolean;
     /**
-     * A name of the icon.
+     * If `true`, a loading indicator is shown instead of a text. The default value is `false`.
      */
-    icon?: IconProps['name'];
+    isLoading?: boolean;
     /**
-     * An icon set which should be used. The default value is `MaterialIcons`.
+     * A linear gradient of the button.
      */
-    iconSet?: IconProps['iconSet'];
+    linearGradient?: 'danger' | 'info' | 'primary' | 'success' | 'warning';
+    /**
+     * LinearGradient props.
+     */
+    linearGradientProps?: Partial<LinearGradientProps>;
+    /**
+     * Called when a single tap gesture is detected.
+     */
+    onPress: (event: GestureResponderEvent) => void;
+    /**
+     * Scalable props.
+     */
+    scalableProps?: Partial<ScalableProps>;
     /**
      * A text of the button.
      */
     text: string;
+    /**
+     * Text props.
+     */
+    textProps?: Partial<TextProps>;
 }
 
-export interface Props extends OwnProps, Pick<ScalableProps, 'onPress'> {}
-
 const Button: React.FunctionComponent<Props> = (props: Props) => {
-    const { color = 'primary', disabled, icon, iconSet, onPress, text } = props;
+    const {
+        color = 'primary',
+        iconProps,
+        isDisabled = false,
+        isLoading = false,
+        linearGradient,
+        linearGradientProps,
+        onPress,
+        scalableProps,
+        text,
+        textProps,
+    } = props;
 
     const styles: Styles = useStyles(injectTheme);
     const { linearGradients } = useTheme();
 
+    const mergedContainerStyles = React.useMemo(
+        (): ViewStyle[] => [
+            styles.containerBase,
+            styles[`containerColor${capitalize(color)}` as keyof Styles],
+        ],
+        [color, styles],
+    );
+
     const renderIcon = (): React.ReactNode => {
-        if (!icon) {
+        if (!iconProps) {
             return null;
         }
 
         return (
             <View style={styles.iconContainer}>
-                <Icon color={styles.icon.color} name={icon} iconSet={iconSet} size={18} />
+                <Icon color={styles.icon.color} size={18} {...iconProps} />
             </View>
         );
     };
 
-    return (
-        <Scalable disabled={disabled || !onPress} hitSlop={hitSlop} onPress={onPress}>
-            <LinearGradient colors={linearGradients[color]} style={styles.container}>
+    const renderContent = (): React.ReactElement => {
+        if (isLoading) {
+            return <ActivityIndicator />;
+        }
+
+        return (
+            <>
                 {renderIcon()}
-                <Text color="white" weight="bold">
+                <Text color="white" weight="bold" {...textProps}>
                     {text}
                 </Text>
-            </LinearGradient>
+            </>
+        );
+    };
+
+    if (linearGradient) {
+        return (
+            <Scalable onPress={onPress} isDisabled={isDisabled || !onPress} {...scalableProps}>
+                <LinearGradient
+                    colors={linearGradients[linearGradient]}
+                    style={styles.containerBase}
+                    {...linearGradientProps}
+                >
+                    {renderContent()}
+                </LinearGradient>
+            </Scalable>
+        );
+    }
+
+    return (
+        <Scalable onPress={onPress} isDisabled={isDisabled || !onPress} {...scalableProps}>
+            <View style={mergedContainerStyles}>{renderContent()}</View>
         </Scalable>
     );
 };

@@ -1,19 +1,27 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import { View, ViewProps as RNViewProps } from 'react-native';
 
 import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
 interface Props {
     children?: React.ReactNode;
+    /**
+     * React Native's View props.
+     */
+    rnViewProps?: Partial<RNViewProps>;
 }
 
 const FlexContainer: React.FunctionComponent<Props> = (props: Props) => {
-    const { children } = props;
+    const { children, rnViewProps } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
-    return <View style={styles.container}>{children}</View>;
+    return (
+        <View style={styles.container} {...rnViewProps}>
+            {children}
+        </View>
+    );
 };
 
 export default FlexContainer;

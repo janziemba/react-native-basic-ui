@@ -5,6 +5,14 @@ title: Checkbox
 
 ## Props
 
+### `iconProps`
+
+Icon props. Check [Icon documentation](Icon.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
 ### `isChecked`
 
 A state of the checkbox.

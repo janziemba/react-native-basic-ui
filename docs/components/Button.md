@@ -9,11 +9,19 @@ title: Button
 
 A color of the button. The default value is `primary`.
 
-| Type                                                                                      | Required |
-| ------------------------------------------------------------------------------------------| -------- |
-| enum('black', 'danger', 'facebook', 'google', 'primary', 'success', 'twitter', 'warning') | No       |
+| Type                                                                                                                                    | Required |
+| ----------------------------------------------------------------------------------------------------------------------------------------| -------- |
+| enum('black', 'danger', 'dark', 'disabled', 'facebook', 'google', 'info', 'light', 'primary', 'success', 'twitter', 'warning', 'white') | No       |
 
-### `disabled`
+### `iconProps`
+
+Icon props. Check [Icon documentation](Icon.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
+### `isDisabled`
 
 If `true`, the button is not pressable and a disabled style is applied. The default value is `false`.
 
@@ -21,21 +29,45 @@ If `true`, the button is not pressable and a disabled style is applied. The defa
 | -------| -------- |
 | string | No       |
 
-### `icon`
+### `isLoading`
 
-A name of the icon.
+If `true`, a loading indicator is shown instead of a text. The default value is `false`.
 
 | Type   | Required |
 | -------| -------- |
 | string | No       |
 
-### `iconSet`
+### `linearGradient`
 
-An icon set which should be used. The default value is `MaterialIcons`.
+A linear gradient of the button.
 
-| Type                       | Required |
-| ---------------------------| -------- |
-| enum('AntDesign', 'Entypo', 'EvilIcons', 'Feather', 'FontAwesome', 'Fontisto', 'Foundation', 'Ionicons', 'MaterialCommunityIcons', 'MaterialIcons', 'Octicons', 'SimpleLineIcons', 'Zocial') | No       |
+| Type                                                    | Required |
+| --------------------------------------------------------| -------- |
+| enum('danger', 'info', 'primary', 'success', 'warning') | No       |
+
+### `linearGradientProps`
+
+LinearGradient props. Check [LinearGradient documentation](LinearGradient.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
+### `onPress`
+
+Called when a single tap gesture is detected.
+
+| Type     | Required |
+| ---------| -------- |
+| function | Yes      |
+
+### `scalableProps`
+
+Scalable props. Check [Scalable documentation](Scalable.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
 
 ### `text`
 
@@ -44,3 +76,11 @@ A text of the button.
 | Type   | Required |
 | -------| -------- |
 | string | Yes      |
+
+### `textProps`
+
+Text props. Check [Text documentation](Text.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |

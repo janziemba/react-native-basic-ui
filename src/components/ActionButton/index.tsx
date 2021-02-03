@@ -1,48 +1,114 @@
 import * as React from 'react';
-import { Insets, View } from 'react-native';
+import { GestureResponderEvent, View, ViewStyle } from 'react-native';
 
 import { linearGradients, useStyles } from '../../theme';
+import { capitalize } from '../../utils';
 import Icon, { Props as IconProps } from '../Icon';
-import LinearGradient from '../LinearGradient';
+import LinearGradient, { Props as LinearGradientProps } from '../LinearGradient';
 import Scalable, { Props as ScalableProps } from '../Scalable';
-import Text from '../Text';
+import Text, { Props as TextProps } from '../Text';
 import injectTheme, { Styles } from './styles';
 
-const hitSlop: Insets = { bottom: 10, left: 10, right: 10, top: 10 };
-
-interface OwnProps {
+interface Props {
+    /**
+     * A color of the button. The default value is `primary`.
+     */
+    color?:
+        | 'black'
+        | 'danger'
+        | 'dark'
+        | 'disabled'
+        | 'facebook'
+        | 'google'
+        | 'info'
+        | 'light'
+        | 'primary'
+        | 'success'
+        | 'twitter'
+        | 'warning'
+        | 'white';
+    /**
+     * Icon props.
+     */
+    iconProps: IconProps;
     /**
      * If `true`, the button is not pressable. The default value is `false`.
      */
-    disabled?: boolean;
+    isDisabled?: boolean;
     /**
-     * A name of the icon.
+     * A linear gradient of the button.
      */
-    icon: IconProps['name'];
+    linearGradient?: 'danger' | 'info' | 'primary' | 'success' | 'warning';
     /**
-     * An icon set which should be used. The default value is `MaterialIcons`.
+     * LinearGradient props.
      */
-    iconSet?: IconProps['iconSet'];
+    linearGradientProps?: Partial<LinearGradientProps>;
+    /**
+     * Called when a single tap gesture is detected.
+     */
+    onPress: (event: GestureResponderEvent) => void;
+    /**
+     * Scalable props.
+     */
+    scalableProps?: Partial<ScalableProps>;
     /**
      * A text of the button.
      */
     text: string;
+    /**
+     * Text props.
+     */
+    textProps?: Partial<TextProps>;
 }
 
-interface Props extends OwnProps, IconProps, Pick<ScalableProps, 'onPress'> {}
-
 const ActionButton: React.FunctionComponent<Props> = (props: Props) => {
-    const { disabled, icon, iconSet, onPress, text } = props;
+    const {
+        color = 'primary',
+        iconProps,
+        isDisabled = false,
+        linearGradient,
+        linearGradientProps,
+        onPress,
+        scalableProps,
+        text,
+        textProps,
+    } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
-    return (
-        <Scalable disabled={disabled || !onPress} hitSlop={hitSlop} onPress={onPress}>
-            <View style={styles.container}>
-                <LinearGradient colors={linearGradients.success} style={styles.iconContainer}>
-                    <Icon color="white" iconSet={iconSet} name={icon} size={28} />
+    const mergedIconContainerStyles = React.useMemo(
+        (): ViewStyle[] => [
+            styles.iconContainerBase,
+            styles[`iconContainerColor${capitalize(color)}` as keyof Styles],
+        ],
+        [color, styles],
+    );
+
+    const renderIcon = (): React.ReactElement => {
+        return <Icon color="white" size={28} {...iconProps} />;
+    };
+
+    const renderIconContainer = (): React.ReactElement => {
+        if (linearGradient) {
+            return (
+                <LinearGradient
+                    colors={linearGradients[linearGradient]}
+                    style={styles.iconContainerBase}
+                    {...linearGradientProps}
+                >
+                    {renderIcon()}
                 </LinearGradient>
-                <Text color="success" size="small" weight="bold">
+            );
+        }
+
+        return <View style={mergedIconContainerStyles}>{renderIcon()}</View>;
+    };
+
+    return (
+        <Scalable isDisabled={isDisabled || !onPress} onPress={onPress} {...scalableProps}>
+            <View style={styles.container}>
+                {renderIconContainer()}
+                <Text color="success" size="small" weight="bold" {...textProps}>
                     {text}
                 </Text>
             </View>

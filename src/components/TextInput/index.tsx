@@ -4,26 +4,57 @@ import {
     Platform,
     TextInput as RNTextInput,
     TextInputFocusEventData,
-    TextInputProps,
+    TextInputProps as RNTextInputProps,
     ViewStyle,
 } from 'react-native';
 
 import { useStyles, useTheme } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
-interface OwnProps {
+interface Props {
+    /**
+     * If `true`, an error style is applied. The default value is `false`.
+     */
+    hasError?: boolean;
     /**
      * If `true`, the text is not editable and a disabled style is applied. The default value is `false`.
      */
     isDisabled?: boolean;
+    /**
+     * Callback that is called when the text input is blurred.
+     */
+    onBlur?: (event: NativeSyntheticEvent<TextInputFocusEventData>) => void;
+    /**
+     * Callback that is called when the text input's text changes. Changed text is passed as
+     * an argument to the callback handler.
+     */
+    onChange?: (text: string) => void;
+    /**
+     * Callback that is called when the text input is focused.
+     */
+    onFocus?: (event: NativeSyntheticEvent<TextInputFocusEventData>) => void;
+    /**
+     * React Native's TextInput props.
+     */
+    rnTextInputProps?: Partial<RNTextInputProps>;
+    /**
+     * A value of the input.
+     */
+    value?: string;
 }
-
-interface Props extends OwnProps, Omit<TextInputProps, 'editable'> {}
 
 const TextInput: React.ForwardRefExoticComponent<
     Props & React.RefAttributes<RNTextInput>
 > = React.forwardRef<RNTextInput, Props>((props: Props, ref?: React.Ref<RNTextInput>) => {
-    const { isDisabled = false, onBlur, onFocus } = props;
+    const {
+        hasError = false,
+        isDisabled = false,
+        onBlur,
+        onChange,
+        onFocus,
+        rnTextInputProps,
+        value,
+    } = props;
 
     const styles: Styles = useStyles(injectTheme);
     const { colors } = useTheme();
@@ -77,18 +108,24 @@ const TextInput: React.ForwardRefExoticComponent<
             result.push(styles.textInputDisabled);
         }
 
+        if (hasError) {
+            result.push(styles.textInputWithError);
+        }
+
         return result;
-    }, [isDisabled, isFocused, styles]);
+    }, [hasError, isDisabled, isFocused, styles]);
 
     return (
         <RNTextInput
-            {...props}
             editable={!isDisabled && isEditable}
             onBlur={handleBlur}
+            onChangeText={onChange}
             onFocus={handleFocus}
             placeholderTextColor={colors.disabled}
             ref={ref}
             style={mergedTextInputStyles}
+            value={value}
+            {...rnTextInputProps}
         />
     );
 });

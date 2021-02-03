@@ -25,14 +25,11 @@ title: Default theme
 
 ```jsx
 {
-    black: [colors.black, colors.black],
     danger: ['#da4718', colors.danger],
-    google: [colors.google, colors.google],
+    info: ['#008dc9', colors.info],
     primary: ['#11376a', colors.primary],
-    sky: [colors.info, colors.white, 'rgba(255, 255, 255, 0)'],
     success: ['#8bcc00', colors.success],
     warning: ['#eea800', colors.warning],
-    white: [colors.white, colors.white],
 }
 ```
 
@@ -74,8 +71,16 @@ title: Default theme
         text: 'left',
     },
     fontFamilies: {
-        bold: 'Palanquin-Bold',
-        medium: 'Palanquin-Medium',
+        bold: Platform.select({
+            android: 'Roboto',
+            default: 'Roboto',
+            ios: 'System',
+        }),
+        medium: Platform.select({
+            android: 'Roboto',
+            default: 'Roboto',
+            ios: 'System',
+        }),
     },
     fontSizes: {
         tiny: 10,

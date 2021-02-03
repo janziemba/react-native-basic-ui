@@ -5,17 +5,31 @@ import Icon, { Props as IconProps } from '../Icon';
 import RowContainer from '../RowContainer';
 import injectTheme, { Styles } from './styles';
 
-interface OwnProps {
+export interface Props {
+    /**
+     * Icon props of all icons.
+     */
+    iconProps?: Partial<IconProps>;
+    /**
+     * Icon props of the empty icons.
+     */
+    emptyIconProps?: Partial<IconProps>;
+    /**
+     * Icon props of the full icons.
+     */
+    fullIconProps?: Partial<IconProps>;
+    /**
+     * Icon props of the half icon.
+     */
+    halfIconProps?: Partial<IconProps>;
     /**
      * A value of the rating between 0 and 5. The default value is `5`.
      */
     value: number;
 }
 
-interface Props extends OwnProps, Pick<IconProps, 'size'> {}
-
 const Rating: React.FunctionComponent<Props> = (props: Props) => {
-    const { size, value = 5 } = props;
+    const { emptyIconProps, fullIconProps, halfIconProps, iconProps, value = 5 } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
@@ -31,9 +45,10 @@ const Rating: React.FunctionComponent<Props> = (props: Props) => {
             icons.push(
                 <Icon
                     key={`emptyIcon_${i}`}
-                    name="star"
-                    size={size}
                     color={styles.emptyIcon.color}
+                    name="star"
+                    {...iconProps}
+                    {...emptyIconProps}
                 />,
             );
         }
@@ -49,7 +64,13 @@ const Rating: React.FunctionComponent<Props> = (props: Props) => {
 
         for (let i = 0; i < count; i += 1) {
             icons.push(
-                <Icon key={`fullIcon_${i}`} color={styles.icon.color} name="star" size={size} />,
+                <Icon
+                    key={`fullIcon_${i}`}
+                    color={styles.icon.color}
+                    name="star"
+                    {...iconProps}
+                    {...fullIconProps}
+                />,
             );
         }
 
@@ -64,7 +85,9 @@ const Rating: React.FunctionComponent<Props> = (props: Props) => {
             return null;
         }
 
-        return <Icon color={styles.icon.color} name="star-half" size={size} />;
+        return (
+            <Icon color={styles.icon.color} name="star-half" {...iconProps} {...halfIconProps} />
+        );
     };
 
     return (

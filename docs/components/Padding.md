@@ -29,6 +29,14 @@ If `false`, the padding is not applied on the right. The default value is `true`
 | --------| -------- |
 | boolean | No       |
 
+### `rnViewProps`
+
+React Native's View props. Check [React Native View documentation](https://reactnative.dev/docs/view#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
 ### `size`
 
 A size of the padding. The default value is `large`.

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Animated } from 'react-native';
 
 import { colors } from '../../theme';
-import Icon from '../Icon';
+import Icon, { Props as IconProps } from '../Icon';
 import Link from '../Link';
 import Text from '../Text';
 
@@ -12,13 +12,17 @@ interface Props {
      */
     content: string;
     /**
+     * Icon props.
+     */
+    iconProps: Partial<IconProps>;
+    /**
      * A visible title.
      */
     title: string;
 }
 
 const Collapsible: React.FunctionComponent<Props> = (props: Props) => {
-    const { content, title } = props;
+    const { content, iconProps, title } = props;
 
     const [isCollapsed, setIsCollapsed] = React.useState(true);
     const opacity = React.useRef(new Animated.Value(0)).current;
@@ -57,9 +61,11 @@ const Collapsible: React.FunctionComponent<Props> = (props: Props) => {
         );
     };
 
+    const textProps = React.useMemo(() => ({ size: 'large' as const }), []);
+
     return (
         <>
-            <Link size="large" onPress={handlePress}>
+            <Link onPress={handlePress} textProps={textProps}>
                 {title}
                 {'\u00A0'}
                 <Icon
@@ -67,6 +73,7 @@ const Collapsible: React.FunctionComponent<Props> = (props: Props) => {
                     iconSet="MaterialCommunityIcons"
                     name={isCollapsed ? 'chevron-down' : 'chevron-up'}
                     size={16}
+                    {...iconProps}
                 />
             </Link>
             {renderContent()}

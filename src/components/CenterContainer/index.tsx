@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, ViewStyle } from 'react-native';
+import { View, ViewProps as RNViewProps, ViewStyle } from 'react-native';
 
 import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
@@ -11,6 +11,10 @@ interface Props {
      */
     horizontal?: boolean;
     /**
+     * React Native's View props.
+     */
+    rnViewProps?: Partial<RNViewProps>;
+    /**
      * If `true`, `alignSelf: 'center'` style is applied. The default value is `false`.
      */
     self?: boolean;
@@ -21,7 +25,7 @@ interface Props {
 }
 
 const CenterContainer: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, horizontal = true, self = false, vertical = true } = props;
+    const { children, horizontal = true, rnViewProps, self = false, vertical = true } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
@@ -43,7 +47,11 @@ const CenterContainer: React.FunctionComponent<Props> = (props: Props) => {
         return result;
     }, [horizontal, self, styles, vertical]);
 
-    return <View style={mergedStyles}>{children}</View>;
+    return (
+        <View style={mergedStyles} {...rnViewProps}>
+            {children}
+        </View>
+    );
 };
 
 export default CenterContainer;

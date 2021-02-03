@@ -2,41 +2,51 @@ import * as React from 'react';
 import { View, ViewStyle } from 'react-native';
 
 import { useStyles } from '../../theme';
+import { capitalize } from '../../utils';
 import Text, { Props as TextProps } from '../Text';
 import injectTheme, { Styles } from './styles';
 
-interface OwnProps {
+interface Props {
+    children?: React.ReactNode;
     /**
      * A color of the label. The default value is `success`.
      */
-    color?: 'info' | 'success' | 'warning';
+    color?:
+        | 'black'
+        | 'dark'
+        | 'danger'
+        | 'disabled'
+        | 'info'
+        | 'light'
+        | 'muted'
+        | 'primary'
+        | 'success'
+        | 'warning'
+        | 'white';
+    /**
+     * Text props.
+     */
+    textProps?: Partial<TextProps>;
 }
 
-interface Props extends OwnProps, Pick<TextProps, 'children'> {}
-
 const Label: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, color = 'success' } = props;
+    const { children, color = 'success', textProps } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
-    const mergedStyles = React.useMemo((): ViewStyle[] => {
-        let result = [styles.container];
+    const mergedStyles = React.useMemo(
+        (): ViewStyle[] => [
+            styles.containerBase,
+            styles[`containerColor${capitalize(color)}` as keyof Styles],
+        ],
+        [color, styles],
+    );
 
-        switch (color) {
-            case 'info':
-                result.push(styles.containerInfo);
-                break;
-            case 'warning':
-                result.push(styles.containerWarning);
-                break;
-        }
-
-        return result;
-    }, [color, styles]);
+    const rnTextProps = React.useMemo(() => ({ numberOfLines: 1 }), []);
 
     return (
         <View style={mergedStyles}>
-            <Text color="white" numberOfLines={1} size="small">
+            <Text color="white" rnTextProps={rnTextProps} size="small" {...textProps}>
                 {children}
             </Text>
         </View>

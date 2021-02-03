@@ -6,6 +6,7 @@ export interface Styles {
     textInput: ViewStyle;
     textInputDisabled: ViewStyle;
     textInputFocused: ViewStyle;
+    textInputWithError: ViewStyle;
 }
 
 const injectTheme = ({ colors, radiuses, spacing, typography }: Theme) =>
@@ -26,6 +27,9 @@ const injectTheme = ({ colors, radiuses, spacing, typography }: Theme) =>
         },
         textInputFocused: {
             borderColor: colors.primary,
+        },
+        textInputWithError: {
+            borderColor: colors.danger,
         },
     });
 

@@ -1,22 +1,33 @@
 import * as React from 'react';
-import { Text } from 'react-native';
 
-import { useStyles } from '../../theme';
-import injectTheme, { Styles } from './styles';
+import { useTheme } from '../../theme';
+import Spacer from '../Spacer';
+import Text, { Props as TextProps } from '../Text';
 
 interface Props {
     /**
      * An actual text or an Icon and a text.
      */
     children?: React.ReactNode | string;
+    /**
+     * Text props.
+     */
+    textProps?: Partial<TextProps>;
 }
 
 const Subheading: React.FunctionComponent<Props> = (props: Props) => {
-    const { children } = props;
+    const { children, textProps } = props;
 
-    const styles: Styles = useStyles(injectTheme);
+    const { typography } = useTheme();
 
-    return <Text style={styles.text}>{children}</Text>;
+    return (
+        <>
+            <Text align={typography.alignment.subheading} size="large" weight="bold" {...textProps}>
+                {children}
+            </Text>
+            <Spacer size="medium" />
+        </>
+    );
 };
 
 export default Subheading;

@@ -5,14 +5,6 @@ title: ExtendedCard
 
 ## Props
 
-### `imageDefaultSource`
-
-Check [React Native Image documentation](https://reactnative.dev/docs/image#defaultsource).
-
-### `imageSource`
-
-Check [React Native Image documentation](https://reactnative.dev/docs/image#source).
-
 ### `labels`
 
 An array of texts in the labels.
@@ -20,6 +12,22 @@ An array of texts in the labels.
 | Type     | Required |
 | ---------| -------- |
 | string[] | No       |
+
+### `labelTextProps`
+
+Text props of the labels. Check [Text documentation](Text.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
+### `onPress`
+
+Called when a single tap gesture is detected.
+
+| Type     | Required |
+| ---------| -------- |
+| function | Yes      |
 
 ### `rating`
 
@@ -37,6 +45,30 @@ A text in the ribbon.
 | -------| -------- |
 | string | No       |
 
+### `ribbonTextProps`
+
+Text props of the ribbon. Check [Text documentation](Text.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
+### `rnImageProps`
+
+React Native's Image props. Check [React Native Image documentation](https://reactnative.dev/docs/image#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
+### `scalableProps`
+
+Scalable props. Check [Scalable documentation](Scalable.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
 ### `subtitle`
 
 A subtitle of the card.
@@ -45,6 +77,14 @@ A subtitle of the card.
 | -------| -------- |
 | string | Yes      |
 
+### `subtitleTextProps`
+
+Text props of the subtitle. Check [Text documentation](Text.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
 ### `title`
 
 A title of the card.
@@ -52,5 +92,13 @@ A title of the card.
 | Type   | Required |
 | -------| -------- |
 | string | Yes      |
+
+### `titleTextProps`
+
+Text props of the title. Check [Text documentation](Text.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
 
 

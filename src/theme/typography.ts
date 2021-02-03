@@ -1,11 +1,13 @@
-import { TextStyle } from 'react-native';
+import { Platform } from 'react-native';
+
+type Alignment = 'center' | 'justify' | 'left' | 'right';
 
 export interface Typography {
     alignment: {
-        caption: TextStyle['textAlign'];
-        heading: TextStyle['textAlign'];
-        subheading: TextStyle['textAlign'];
-        text: TextStyle['textAlign'];
+        caption: Alignment;
+        heading: Alignment;
+        subheading: Alignment;
+        text: Alignment;
     };
     fontFamilies: {
         bold: string;
@@ -35,8 +37,16 @@ const typography: Typography = {
         text: 'left',
     },
     fontFamilies: {
-        bold: 'Palanquin-Bold',
-        medium: 'Palanquin-Medium',
+        bold: Platform.select({
+            android: 'Roboto',
+            default: 'Roboto',
+            ios: 'System',
+        }),
+        medium: Platform.select({
+            android: 'Roboto',
+            default: 'Roboto',
+            ios: 'System',
+        }),
     },
     fontSizes: {
         tiny: 10,
