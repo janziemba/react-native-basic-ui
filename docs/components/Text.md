@@ -17,9 +17,9 @@ An alignment of the text. The default value is `left`.
 
 A color of the text. The default value is `dark`.
 
-| Type                                                                                                   | Required |
-| -------------------------------------------------------------------------------------------------------| -------- |
-| enum('black', 'dark', 'danger', 'disabled', 'info', 'light', 'primary', 'success', 'warning', 'white') | No       |
+| Type                                                                                                            | Required |
+| ----------------------------------------------------------------------------------------------------------------| -------- |
+| enum('black', 'dark', 'danger', 'disabled', 'info', 'light', 'muted', 'primary', 'success', 'warning', 'white') | No       |
 
 ### `onPress`
 
@@ -31,7 +31,7 @@ Called when a single tap gesture is detected.
 
 ### `rnTextProps`
 
-Check [React Native Text documentation](https://reactnative.dev/docs/text#props).
+React Native's Text props. Check [React Native Text documentation](https://reactnative.dev/docs/text#props).
 
 | Type   | Required |
 | -------| -------- |

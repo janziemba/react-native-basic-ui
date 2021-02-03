@@ -13,6 +13,7 @@ export interface Styles {
     colorDisabled: TextStyle;
     colorInfo: TextStyle;
     colorLight: TextStyle;
+    colorMuted: TextStyle;
     colorPrimary: TextStyle;
     colorSuccess: TextStyle;
     colorWarning: TextStyle;
@@ -59,6 +60,9 @@ const injectTheme = ({ colors, typography }: Theme) =>
         },
         colorLight: {
             color: colors.light,
+        },
+        colorMuted: {
+            color: colors.muted,
         },
         colorPrimary: {
             color: colors.primary,

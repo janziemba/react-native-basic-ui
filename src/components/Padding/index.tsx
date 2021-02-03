@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, ViewStyle } from 'react-native';
+import { View, ViewProps as RNViewProps, ViewStyle } from 'react-native';
 
 import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
@@ -21,6 +21,10 @@ interface Props {
      */
     right?: boolean;
     /**
+     * React Native's View props.
+     */
+    rnViewProps?: Partial<RNViewProps>;
+    /**
      * A size of the padding. The default value is `large`.
      */
     size?: Size;
@@ -36,6 +40,7 @@ const Padding: React.FunctionComponent<Props> = (props: Props) => {
         children,
         left = true,
         right = true,
+        rnViewProps,
         size = 'large',
         top = true,
     } = props;
@@ -64,7 +69,11 @@ const Padding: React.FunctionComponent<Props> = (props: Props) => {
         return result;
     }, [bottom, left, right, size, top, styles]);
 
-    return <View style={mergedStyles}>{children}</View>;
+    return (
+        <View style={mergedStyles} {...rnViewProps}>
+            {children}
+        </View>
+    );
 };
 
 export default Padding;

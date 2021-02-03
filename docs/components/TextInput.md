@@ -7,6 +7,14 @@ title: TextInput
 
 Check [React Native TextInput documentation](https://reactnative.dev/docs/textinput#props).
 
+### `hasError`
+
+If `true`, an error style is applied. The default value is `false`.
+
+| Type    | Required |
+| --------| -------- |
+| boolean | No       |
+
 ### `isDisabled`
 
 If `true`, the text is not editable and a disabled style is applied. The default value is `false`.
@@ -41,7 +49,7 @@ Callback that is called when the text input is focused.
 
 ### `rnTextInputProps`
 
-Check [React Native Text Input documentation](https://reactnative.dev/docs/textinput#props).
+React Native's Text Input props. Check [React Native Text Input documentation](https://reactnative.dev/docs/textinput#props).
 
 | Type   | Required |
 | -------| -------- |

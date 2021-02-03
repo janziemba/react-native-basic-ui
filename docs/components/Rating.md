@@ -5,13 +5,37 @@ title: Rating
 
 ## Props
 
-### `size`
+### `iconProps`
 
-A size of the icon. The default value is `24`.
+Icon props of all icons. Check [Icon documentation](Icon.md#props).
 
 | Type   | Required |
 | -------| -------- |
-| number | No       |
+| object | No       |
+
+### `emptyIconProps`
+
+Icon props of the empty icons. Check [Icon documentation](Icon.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
+### `fullIconProps`
+
+Icon props of the full icons. Check [Icon documentation](Icon.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
+### `halfIconProps`
+
+Icon props of the half icon. Check [Icon documentation](Icon.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
 
 ### `value`
 

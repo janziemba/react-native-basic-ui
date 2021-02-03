@@ -1,23 +1,32 @@
 import * as React from 'react';
-import { Animated, Keyboard, KeyboardEvent, Platform, View, ViewProps } from 'react-native';
+import {
+    Animated,
+    Keyboard,
+    KeyboardEvent,
+    Platform,
+    View,
+    ViewProps as RNViewProps,
+} from 'react-native';
 
 import { useStyles } from '../../theme';
 import Link from '../Link';
 import Padding from '../Padding';
 import injectTheme, { Styles } from './styles';
 
-interface OwnProps {
+interface Props {
     children?: React.ReactNode;
     /**
      * A text of the link to dismiss keyboard.
      */
     dismissKeyboardText: string;
+    /**
+     * React Native's View props.
+     */
+    rnViewProps?: Partial<RNViewProps>;
 }
 
-interface Props extends OwnProps, ViewProps {}
-
 const AdjustableContainer: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, dismissKeyboardText } = props;
+    const { children, dismissKeyboardText, rnViewProps } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
@@ -59,7 +68,7 @@ const AdjustableContainer: React.FunctionComponent<Props> = (props: Props) => {
 
     if (Platform.OS === 'ios') {
         return (
-            <View style={styles.container}>
+            <View style={styles.container} {...rnViewProps}>
                 {children}
                 <Animated.View style={[styles.keyboardContainer, { height: keyboardHeight }]}>
                     <Padding>
@@ -70,7 +79,11 @@ const AdjustableContainer: React.FunctionComponent<Props> = (props: Props) => {
         );
     }
 
-    return <View style={styles.container}>{children}</View>;
+    return (
+        <View style={styles.container} {...rnViewProps}>
+            {children}
+        </View>
+    );
 };
 
 export default AdjustableContainer;

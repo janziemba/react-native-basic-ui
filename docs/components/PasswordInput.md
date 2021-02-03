@@ -7,7 +7,7 @@ title: PasswordInput
 
 ### `iconProps`
 
-Check [Icon documentation](Icon.md#props).
+Icon props. Check [Icon documentation](Icon.md#props).
 
 | Type   | Required |
 | -------| -------- |
@@ -47,7 +47,7 @@ Callback that is called when the text input is focused.
 
 ### `rnTextInputProps`
 
-Check [React Native Text Input documentation](https://reactnative.dev/docs/textinput#props).
+React Native's Text Input props. Check [React Native Text Input documentation](https://reactnative.dev/docs/textinput#props).
 
 | Type   | Required |
 | -------| -------- |

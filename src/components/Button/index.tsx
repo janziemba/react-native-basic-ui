@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { GestureResponderEvent, Insets, View } from 'react-native';
+import { ActivityIndicator, GestureResponderEvent, View, ViewStyle } from 'react-native';
 
 import { useStyles, useTheme } from '../../theme';
+import { capitalize } from '../../utils';
 import Icon, { Props as IconProps } from '../Icon';
 import LinearGradient, { Props as LinearGradientProps } from '../LinearGradient';
 import Scalable, { Props as ScalableProps } from '../Scalable';
@@ -15,12 +16,17 @@ export interface Props {
     color?:
         | 'black'
         | 'danger'
+        | 'dark'
+        | 'disabled'
         | 'facebook'
         | 'google'
+        | 'info'
+        | 'light'
         | 'primary'
         | 'success'
         | 'twitter'
-        | 'warning';
+        | 'warning'
+        | 'white';
     /**
      * Icon props.
      */
@@ -30,9 +36,22 @@ export interface Props {
      */
     isDisabled?: boolean;
     /**
+     * If `true`, a loading indicator is shown instead of a text. The default value is `false`.
+     */
+    isLoading?: boolean;
+    /**
+     * A linear gradient of the button.
+     */
+    linearGradient?:
+        | 'danger'
+        | 'info'
+        | 'primary'
+        | 'success'
+        | 'warning';
+    /**
      * LinearGradient props.
      */
-    linearGradientProps?: LinearGradientProps;
+    linearGradientProps?: Partial<LinearGradientProps>;
     /**
      * Called when a single tap gesture is detected.
      */
@@ -40,7 +59,7 @@ export interface Props {
     /**
      * Scalable props.
      */
-    scalableProps?: ScalableProps;
+    scalableProps?: Partial<ScalableProps>;
     /**
      * A text of the button.
      */
@@ -48,14 +67,16 @@ export interface Props {
     /**
      * Text props.
      */
-    textProps?: TextProps;
+    textProps?: Partial<TextProps>;
 }
 
 const Button: React.FunctionComponent<Props> = (props: Props) => {
     const {
         color = 'primary',
         iconProps,
-        isDisabled,
+        isDisabled = false,
+        isLoading = false,
+        linearGradient,
         linearGradientProps,
         onPress,
         scalableProps,
@@ -65,6 +86,14 @@ const Button: React.FunctionComponent<Props> = (props: Props) => {
 
     const styles: Styles = useStyles(injectTheme);
     const { linearGradients } = useTheme();
+
+    const mergedContainerStyles = React.useMemo(
+        (): ViewStyle[] => [
+            styles.containerBase,
+            styles[`containerColor${capitalize(color)}` as keyof Styles],
+        ],
+        [color, styles],
+    );
 
     const renderIcon = (): React.ReactNode => {
         if (!iconProps) {
@@ -78,22 +107,38 @@ const Button: React.FunctionComponent<Props> = (props: Props) => {
         );
     };
 
-    return (
-        <Scalable
-            onPress={onPress}
-            isDisabled={isDisabled || !onPress}
-            {...scalableProps}
-        >
-            <LinearGradient
-                colors={linearGradients[color]}
-                style={styles.container}
-                {...linearGradientProps}
-            >
+    const renderContent = (): React.ReactElement => {
+        if (isLoading) {
+            return <ActivityIndicator />;
+        }
+
+        return (
+            <>
                 {renderIcon()}
                 <Text color="white" weight="bold" {...textProps}>
                     {text}
                 </Text>
-            </LinearGradient>
+            </>
+        );
+    };
+
+    if (linearGradient) {
+        return (
+            <Scalable onPress={onPress} isDisabled={isDisabled || !onPress} {...scalableProps}>
+                <LinearGradient
+                    colors={linearGradients[linearGradient]}
+                    style={styles.containerBase}
+                    {...linearGradientProps}
+                >
+                    {renderContent()}
+                </LinearGradient>
+            </Scalable>
+        );
+    }
+
+    return (
+        <Scalable onPress={onPress} isDisabled={isDisabled || !onPress} {...scalableProps}>
+            <View style={mergedContainerStyles}>{renderContent()}</View>
         </Scalable>
     );
 };

@@ -1,69 +1,92 @@
 import * as React from 'react';
-import { Image, ImageProps, View } from 'react-native';
+import { GestureResponderEvent, Image, ImageProps as RNImageProps, View } from 'react-native';
 
 import { useStyles } from '../../theme';
 import Label from '../Label';
 import Padding from '../Padding';
-import Rating from '../Rating';
+import Rating, { Props as RatingProps } from '../Rating';
 import RowContainer from '../RowContainer';
 import Scalable, { Props as ScalableProps } from '../Scalable';
 import Shadow from '../Shadow';
 import Spacer from '../Spacer';
-import Text from '../Text';
+import Text, { Props as TextProps } from '../Text';
 import injectTheme, { Styles } from './styles';
 
-interface OwnProps {
-    /**
-     * A static image to display while downloading the final image off the network.
-     */
-    imageDefaultSource?: ImageProps['defaultSource'];
-    /**
-     * The image source (either a remote URL or a local file resource).
-     *
-     * This prop can also contain several remote URLs, specified together with their width and height and potentially with scale/other URI arguments.
-     * The native side will then choose the best uri to display based on the measured size of the image container.
-     * A cache property can be added to control how networked request interacts with the local cache.
-     *
-     * The currently supported formats are png, jpg, jpeg, bmp, gif, webp (Android only), psd (iOS only).
-     */
-    imageSource: ImageProps['source'];
+export interface Props {
     /**
      * An array of texts in the labels.
      */
     labels?: string[];
     /**
+     * Text props of the label.
+     */
+    labelTextProps?: Partial<TextProps>;
+    /**
+     * Called when a single tap gesture is detected.
+     */
+    onPress: (event: GestureResponderEvent) => void;
+    /**
      * A value of the rating between 0 and 5.
      */
     rating?: number;
+    /**
+     * Rating props.
+     */
+    ratingProps?: Partial<RatingProps>;
     /**
      * A text in the ribbon.
      */
     ribbon?: string;
     /**
+     * Text props of the ribbon.
+     */
+    ribbonTextProps?: Partial<TextProps>;
+    /**
+     * React Native's Image props.
+     */
+    rnImageProps: RNImageProps;
+    /**
+     * Scalable props.
+     */
+    scalableProps?: Partial<ScalableProps>;
+    /**
      * A subtitle of the card.
      */
     subtitle: string;
     /**
+     * Text props of the subtitle.
+     */
+    subtitleTextProps?: Partial<TextProps>;
+    /**
      * A title of the card.
      */
     title: string;
+    /**
+     * Text props of the title.
+     */
+    titleTextProps?: Partial<TextProps>;
 }
-
-export interface Props extends OwnProps, Pick<ScalableProps, 'onPress'> {}
 
 const ExtendedCard: React.FunctionComponent<Props> = (props: Props) => {
     const {
-        imageDefaultSource,
-        imageSource,
         labels,
+        labelTextProps,
         onPress,
         rating,
+        ratingProps,
         ribbon,
+        ribbonTextProps,
+        rnImageProps,
+        scalableProps,
         subtitle,
+        subtitleTextProps,
         title,
+        titleTextProps,
     } = props;
 
     const styles: Styles = useStyles(injectTheme);
+
+    const ratingIconProps = React.useMemo(() => ({ size: 18 }), []);
 
     const renderRating = (): React.ReactNode => {
         if (!rating) {
@@ -72,7 +95,7 @@ const ExtendedCard: React.FunctionComponent<Props> = (props: Props) => {
 
         return (
             <View style={styles.ratingContainer}>
-                <Rating size={18} value={rating} />
+                <Rating iconProps={ratingIconProps} value={rating} {...ratingProps} />
             </View>
         );
     };
@@ -84,7 +107,7 @@ const ExtendedCard: React.FunctionComponent<Props> = (props: Props) => {
 
         return (
             <View style={styles.ribbonContainer}>
-                <Text align="center" color="white" size="small" weight="bold">
+                <Text align="center" color="white" size="small" weight="bold" {...ribbonTextProps}>
                     {ribbon}
                 </Text>
             </View>
@@ -100,9 +123,11 @@ const ExtendedCard: React.FunctionComponent<Props> = (props: Props) => {
             <>
                 <Spacer size="small" />
                 <RowContainer>
-                    {labels.map((label) => (
+                    {labels.map((label: string) => (
                         <React.Fragment key={label}>
-                            <Label color="warning">{label}</Label>
+                            <Label color="warning" {...labelTextProps}>
+                                {label}
+                            </Label>
                             <Spacer size="tiny" />
                         </React.Fragment>
                     ))}
@@ -112,24 +137,19 @@ const ExtendedCard: React.FunctionComponent<Props> = (props: Props) => {
     };
 
     return (
-        <Scalable onPress={onPress}>
+        <Scalable onPress={onPress} {...scalableProps}>
             <View style={styles.container}>
                 <Shadow>
                     <View style={styles.imageContainer}>
-                        <Image
-                            defaultSource={imageDefaultSource}
-                            resizeMode="cover"
-                            source={imageSource}
-                            style={styles.image}
-                        />
+                        <Image resizeMode="cover" style={styles.image} {...rnImageProps} />
                         {renderRating()}
                         {renderRibbon()}
                     </View>
                     <Padding>
-                        <Text color="info" size="large" weight="bold">
+                        <Text color="info" size="large" weight="bold" {...titleTextProps}>
                             {title}
                         </Text>
-                        <Text>{subtitle}</Text>
+                        <Text {...subtitleTextProps}>{subtitle}</Text>
                         {renderLabels()}
                     </Padding>
                 </Shadow>

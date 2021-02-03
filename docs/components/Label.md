@@ -9,13 +9,13 @@ title: Label
 
 A color of the label. The default value is `success`.
 
-| Type                               | Required |
-| -----------------------------------| -------- |
-| enum('info', 'success', 'warning') | No       |
+| Type                                                                                                            | Required |
+| ----------------------------------------------------------------------------------------------------------------| -------- |
+| enum('black', 'dark', 'danger', 'disabled', 'info', 'light', 'muted', 'primary', 'success', 'warning', 'white') | No       |
 
 ### `textProps`
 
-Check [Text documentation](Text.md#props).
+Text props. Check [Text documentation](Text.md#props).
 
 | Type   | Required |
 | -------| -------- |

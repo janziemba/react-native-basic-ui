@@ -1,5 +1,10 @@
 import * as React from 'react';
-import { GestureResponderEvent, Text as RNText, TextProps as RNTextProps, TextStyle } from 'react-native';
+import {
+    GestureResponderEvent,
+    Text as RNText,
+    TextProps as RNTextProps,
+    TextStyle,
+} from 'react-native';
 
 import { useStyles, useTheme } from '../../theme';
 import { capitalize } from '../../utils';
@@ -24,6 +29,7 @@ export interface Props {
         | 'disabled'
         | 'info'
         | 'light'
+        | 'muted'
         | 'primary'
         | 'success'
         | 'warning'
@@ -35,7 +41,7 @@ export interface Props {
     /**
      * React Native's Text props.
      */
-    rnTextProps?: RNTextProps;
+    rnTextProps?: Partial<RNTextProps>;
     /**
      * A size of the text. The default value is `medium`.
      */
@@ -66,18 +72,17 @@ const Text: React.FunctionComponent<Props> = (props: Props) => {
 
     const styles: Styles = useStyles(injectTheme);
 
-    const mergedStyles = React.useMemo((): TextStyle[] => {
-        const result = [
+    const mergedStyles = React.useMemo(
+        (): TextStyle[] => [
             styles.base,
             styles[`align${capitalize(align)}` as keyof Styles],
             styles[`color${capitalize(color)}` as keyof Styles],
             styles[`size${capitalize(size)}` as keyof Styles],
             styles[`style${capitalize(style)}` as keyof Styles],
             styles[`weight${capitalize(weight)}` as keyof Styles],
-        ];
-
-        return result;
-    }, [align, color, size, style, styles, weight]);
+        ],
+        [align, color, size, style, styles, weight],
+    );
 
     return (
         <RNText onPress={onPress} style={mergedStyles} suppressHighlighting {...rnTextProps}>

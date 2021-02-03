@@ -13,6 +13,10 @@ import injectTheme, { Styles } from './styles';
 
 interface Props {
     /**
+     * If `true`, an error style is applied. The default value is `false`.
+     */
+    hasError?: boolean;
+    /**
      * If `true`, the text is not editable and a disabled style is applied. The default value is `false`.
      */
     isDisabled?: boolean;
@@ -32,7 +36,7 @@ interface Props {
     /**
      * React Native's TextInput props.
      */
-    rnTextInputProps?: RNTextInputProps;
+    rnTextInputProps?: Partial<RNTextInputProps>;
     /**
      * A value of the input.
      */
@@ -42,7 +46,7 @@ interface Props {
 const TextInput: React.ForwardRefExoticComponent<
     Props & React.RefAttributes<RNTextInput>
 > = React.forwardRef<RNTextInput, Props>((props: Props, ref?: React.Ref<RNTextInput>) => {
-    const { isDisabled = false, onBlur, onChange, onFocus, rnTextInputProps, value } = props;
+    const { hasError = false, isDisabled = false, onBlur, onChange, onFocus, rnTextInputProps, value } = props;
 
     const styles: Styles = useStyles(injectTheme);
     const { colors } = useTheme();
@@ -96,8 +100,12 @@ const TextInput: React.ForwardRefExoticComponent<
             result.push(styles.textInputDisabled);
         }
 
+        if (hasError) {
+            result.push(styles.textInputWithError);
+        }
+
         return result;
-    }, [isDisabled, isFocused, styles]);
+    }, [hasError, isDisabled, isFocused, styles]);
 
     return (
         <RNTextInput

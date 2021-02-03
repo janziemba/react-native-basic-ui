@@ -13,7 +13,7 @@ interface Props {
     /**
      * Text props.
      */
-    textProps?: TextProps;
+    textProps?: Partial<TextProps>;
 }
 
 const Heading: React.FunctionComponent<Props> = (props: Props) => {
@@ -25,7 +25,6 @@ const Heading: React.FunctionComponent<Props> = (props: Props) => {
         <>
             <Text
                 align={typography.alignment.heading}
-                color="primary"
                 size="huge"
                 weight="bold"
                 {...textProps}

@@ -13,7 +13,7 @@ interface Props {
     /**
      * Text props.
      */
-    textProps?: TextProps;
+    textProps?: Partial<TextProps>;
 }
 
 const Caption: React.FunctionComponent<Props> = (props: Props) => {
@@ -25,7 +25,7 @@ const Caption: React.FunctionComponent<Props> = (props: Props) => {
         <>
             <Text
                 align={typography.alignment.caption}
-                color="primary"
+                color="disabled"
                 size="large"
                 weight="bold"
                 {...textProps}

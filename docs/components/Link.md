@@ -23,7 +23,7 @@ Called when a single tap gesture is detected.
 
 ### `textProps`
 
-Check [Text documentation](Text.md#props).
+Text props. Check [Text documentation](Text.md#props).
 
 | Type   | Required |
 | -------| -------- |

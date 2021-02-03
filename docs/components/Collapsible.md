@@ -13,6 +13,14 @@ A hidden content.
 | --------| -------- |
 | string  | Yes      |
 
+### `iconProps`
+
+Icon props. Check [Icon documentation](Icon.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
 ### `title`
 
 A visible title.

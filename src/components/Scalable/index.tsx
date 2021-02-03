@@ -23,7 +23,7 @@ export interface Props {
     /**
      * React Native's TouchableWithoutFeedback props.
      */
-    rnTouchableWithoutFeedbackProps?: TouchableWithoutFeedbackProps;
+    rnTouchableWithoutFeedbackProps?: Partial<TouchableWithoutFeedbackProps>;
     /**
      * A scale of the component when pressed. The default value is `0.95`.
      */

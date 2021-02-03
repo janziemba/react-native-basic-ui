@@ -7,7 +7,7 @@ title: Heading
 
 ### `textProps`
 
-Check [Text documentation](Text.md#props).
+Text props. Check [Text documentation](Text.md#props).
 
 | Type   | Required |
 | -------| -------- |

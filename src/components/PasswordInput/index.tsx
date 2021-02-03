@@ -18,7 +18,7 @@ interface Props {
     /**
      * Icon props.
      */
-    iconProps?: IconProps;
+    iconProps?: Partial<IconProps>;
     /**
      * If `true`, the text is not editable and a disabled style is applied. The default value is `false`.
      */
@@ -39,7 +39,7 @@ interface Props {
     /**
      * React Native's TextInput props.
      */
-    rnTextInputProps?: RNTextInputProps;
+    rnTextInputProps?: Partial<RNTextInputProps>;
     /**
      * A value of the input.
      */

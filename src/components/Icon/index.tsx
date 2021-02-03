@@ -53,7 +53,7 @@ const Icon: React.FunctionComponent<Props> = (props: Props) => {
         };
     }, [color, styles]);
 
-    return <VectorIcon allowFontScaling={false} name={name} size={size} style={mergedStyles} />;
+    return <VectorIcon name={name} size={size} style={mergedStyles} />;
 };
 
 export default Icon;

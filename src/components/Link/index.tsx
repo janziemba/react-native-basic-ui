@@ -19,7 +19,7 @@ interface Props {
     /**
      * Text props.
      */
-    textProps?: TextProps;
+    textProps?: Partial<TextProps>;
 }
 
 const Link: React.FunctionComponent<Props> = (props: Props) => {
