@@ -1,4 +1,4 @@
-import { TextStyle } from 'react-native';
+import { Platform } from 'react-native';
 
 type Alignment = 'center' | 'justify' | 'left' | 'right';
 
@@ -37,8 +37,16 @@ const typography: Typography = {
         text: 'left',
     },
     fontFamilies: {
-        bold: 'Palanquin-Bold',
-        medium: 'Palanquin-Medium',
+        bold: Platform.select({
+            android: 'Roboto',
+            default: 'Roboto',
+            ios: 'System',
+        }),
+        medium: Platform.select({
+            android: 'Roboto',
+            default: 'Roboto',
+            ios: 'System',
+        }),
     },
     fontSizes: {
         tiny: 10,

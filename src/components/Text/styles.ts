@@ -101,12 +101,15 @@ const injectTheme = ({ colors, typography }: Theme) =>
         },
         styleNormal: {
             fontStyle: 'normal',
+            fontWeight: 'normal',
         },
         weightBold: {
             fontFamily: typography.fontFamilies.bold,
+            fontWeight: 'bold',
         },
         weightMedium: {
             fontFamily: typography.fontFamilies.medium,
+            fontWeight: '600'
         },
     });
 
