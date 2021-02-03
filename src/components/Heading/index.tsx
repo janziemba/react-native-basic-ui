@@ -22,12 +22,7 @@ const Heading: React.FunctionComponent<Props> = (props: Props) => {
 
     return (
         <>
-            <Text
-                align={typography.alignment.heading}
-                size="huge"
-                weight="bold"
-                {...textProps}
-            >
+            <Text align={typography.alignment.heading} size="huge" weight="bold" {...textProps}>
                 {children}
             </Text>
             <Spacer size="large" />
