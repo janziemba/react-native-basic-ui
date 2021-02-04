@@ -54,7 +54,7 @@ interface Props {
     /**
      * A text of the button.
      */
-    text: string;
+    text?: string;
     /**
      * Text props.
      */
@@ -84,9 +84,7 @@ const ActionButton: React.FunctionComponent<Props> = (props: Props) => {
         [color, styles],
     );
 
-    const renderIcon = (): React.ReactElement => {
-        return <Icon color="white" size={28} {...iconProps} />;
-    };
+    const renderIcon = (): React.ReactElement => <Icon color="white" size={28} {...iconProps} />;
 
     const renderIconContainer = (): React.ReactElement => {
         if (linearGradient) {
@@ -104,13 +102,23 @@ const ActionButton: React.FunctionComponent<Props> = (props: Props) => {
         return <View style={mergedIconContainerStyles}>{renderIcon()}</View>;
     };
 
+    const renderText = (): React.ReactNode => {
+        if (!text) {
+            return null;
+        }
+
+        return (
+            <Text color="success" size="small" weight="bold" {...textProps}>
+                {text}
+            </Text>
+        );
+    };
+
     return (
         <Scalable isDisabled={isDisabled || !onPress} onPress={onPress} {...scalableProps}>
             <View style={styles.container}>
                 {renderIconContainer()}
-                <Text color="success" size="small" weight="bold" {...textProps}>
-                    {text}
-                </Text>
+                {renderText()}
             </View>
         </Scalable>
     );

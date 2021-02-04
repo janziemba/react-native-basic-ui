@@ -67,7 +67,7 @@ A text of the button.
 
 | Type   | Required |
 | -------| -------- |
-| string | Yes      |
+| string | No       |
 
 ### `textProps`
 
