@@ -5,6 +5,14 @@ title: PasswordInput
 
 ## Props
 
+### `hasError`
+
+If `true`, an error style is applied. The default value is `false`.
+
+| Type    | Required |
+| --------| -------- |
+| boolean | No       |
+
 ### `iconProps`
 
 Icon props. Check [Icon documentation](Icon.md#props).
@@ -44,6 +52,14 @@ Callback that is called when the text input is focused.
 | Type     | Required |
 | ---------| -------- |
 | function | No       |
+
+### `placeholder`
+
+The string that will be rendered before text input has been entered.
+
+| Type   | Required |
+| -------| -------- |
+| string | No       |
 
 ### `rnTextInputProps`
 

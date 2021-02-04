@@ -16,6 +16,10 @@ import injectTheme, { Styles } from './styles';
 
 interface Props {
     /**
+     * If `true`, an error style is applied. The default value is `false`.
+     */
+    hasError?: boolean;
+    /**
      * Icon props.
      */
     iconProps?: Partial<IconProps>;
@@ -37,6 +41,10 @@ interface Props {
      */
     onFocus?: (event: NativeSyntheticEvent<TextInputFocusEventData>) => void;
     /**
+     * The string that will be rendered before text input has been entered.
+     */
+    placeholder?: string;
+    /**
      * React Native's TextInput props.
      */
     rnTextInputProps?: Partial<RNTextInputProps>;
@@ -50,11 +58,13 @@ const PasswordInput: React.ForwardRefExoticComponent<
     Props & React.RefAttributes<RNTextInput>
 > = React.forwardRef<RNTextInput, Props>((props: Props, ref?: React.Ref<RNTextInput>) => {
     const {
+        hasError = false,
         iconProps,
         isDisabled = false,
         onBlur,
         onChange,
         onFocus,
+        placeholder,
         rnTextInputProps,
         value,
     } = props;
@@ -112,8 +122,12 @@ const PasswordInput: React.ForwardRefExoticComponent<
             result.push(styles.textInputDisabled);
         }
 
+        if (hasError) {
+            result.push(styles.textInputWithError);
+        }
+
         return result;
-    }, [isDisabled, isFocused, styles]);
+    }, [hasError, isDisabled, isFocused, styles]);
 
     const handleIconPress = React.useCallback((): void => {
         setIsPasswordVisible(!isPasswordVisible);
@@ -126,6 +140,7 @@ const PasswordInput: React.ForwardRefExoticComponent<
                 onBlur={handleBlur}
                 onChangeText={onChange}
                 onFocus={handleFocus}
+                placeholder={placeholder}
                 placeholderTextColor={colors.disabled}
                 ref={ref}
                 secureTextEntry={!isPasswordVisible}
