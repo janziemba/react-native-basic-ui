@@ -35,7 +35,7 @@ import { Button, CenterContainer } from 'react-native-basic-ui';
 const ExampleComponent = () => {
     return (
         <CenterContainer>
-            <Button text="Hello world" />
+            <Button onPress={() => {}} text="Hello world" />
         </CenterContainer>
     );
 };

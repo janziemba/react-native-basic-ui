@@ -27,7 +27,7 @@ Called when a single tap gesture is detected.
 
 | Type     | Required |
 | ---------| -------- |
-| function | Yes      |
+| function | No       |
 
 ### `rnTextProps`
 
