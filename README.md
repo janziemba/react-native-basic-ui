@@ -38,7 +38,7 @@ See [janziemba.github.io/react-native-basic-ui](https://janziemba.github.io/reac
 
 ## Example
 
-Check this [Expo](https://snack.expo.io/@janziemba/react-native-basic-ui).
+Check this [Expo](https://snack.expo.io/@janziemba/react-native-basic-ui) and [example](example) directory.
 
 ## Author
 

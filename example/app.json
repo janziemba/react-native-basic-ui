@@ -1,0 +1,10 @@
+{
+    "name": "example",
+    "displayName": "React Native Basic UI Example",
+    "expo": {
+        "assetBundlePatterns": ["**/*"],
+        "name": "example",
+        "slug": "example",
+        "version": "1.0.0"
+    }
+}
