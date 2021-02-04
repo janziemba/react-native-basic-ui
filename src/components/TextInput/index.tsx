@@ -34,6 +34,10 @@ interface Props {
      */
     onFocus?: (event: NativeSyntheticEvent<TextInputFocusEventData>) => void;
     /**
+     * The string that will be rendered before text input has been entered.
+     */
+    placeholder?: string;
+    /**
      * React Native's TextInput props.
      */
     rnTextInputProps?: Partial<RNTextInputProps>;
@@ -52,6 +56,7 @@ const TextInput: React.ForwardRefExoticComponent<
         onBlur,
         onChange,
         onFocus,
+        placeholder,
         rnTextInputProps,
         value,
     } = props;
@@ -121,6 +126,7 @@ const TextInput: React.ForwardRefExoticComponent<
             onBlur={handleBlur}
             onChangeText={onChange}
             onFocus={handleFocus}
+            placeholder={placeholder}
             placeholderTextColor={colors.disabled}
             ref={ref}
             style={mergedTextInputStyles}
