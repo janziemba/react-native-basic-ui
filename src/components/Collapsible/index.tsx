@@ -14,7 +14,7 @@ interface Props {
     /**
      * Icon props.
      */
-    iconProps: Partial<IconProps>;
+    iconProps?: Partial<IconProps>;
     /**
      * A visible title.
      */
