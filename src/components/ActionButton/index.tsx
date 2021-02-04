@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { GestureResponderEvent, View, ViewStyle } from 'react-native';
 
-import { linearGradients, useStyles } from '../../theme';
+import { useStyles, useTheme } from '../../theme';
 import { capitalize } from '../../utils';
 import Icon, { Props as IconProps } from '../Icon';
 import LinearGradient, { Props as LinearGradientProps } from '../LinearGradient';
@@ -75,6 +75,7 @@ const ActionButton: React.FunctionComponent<Props> = (props: Props) => {
     } = props;
 
     const styles: Styles = useStyles(injectTheme);
+    const { linearGradients } = useTheme();
 
     const mergedIconContainerStyles = React.useMemo(
         (): ViewStyle[] => [
