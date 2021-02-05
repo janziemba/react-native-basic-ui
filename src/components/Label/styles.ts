@@ -6,6 +6,7 @@ export interface Styles {
     containerBase: ViewStyle;
     containerColorBlack: ViewStyle;
     containerColorDanger: ViewStyle;
+    containerColorDark: ViewStyle;
     containerColorDisabled: ViewStyle;
     containerColorInfo: ViewStyle;
     containerColorLight: ViewStyle;
@@ -28,6 +29,9 @@ const injectTheme = ({ colors, radiuses, spacing }: Theme) =>
         },
         containerColorDanger: {
             backgroundColor: colors.danger,
+        },
+        containerColorDark: {
+            backgroundColor: colors.dark,
         },
         containerColorDisabled: {
             backgroundColor: colors.disabled,
