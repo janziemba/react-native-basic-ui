@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react-native';
 import * as React from 'react';
 import { ScrollView } from 'react-native';
-import { Label, Padding, Spacer, Text } from 'react-native-basic-ui';
+import { Label, Padding, RowContainer, Spacer, Text } from 'react-native-basic-ui';
 
 const stories = storiesOf('Label', module);
 
@@ -13,7 +13,8 @@ stories.addDecorator((getStory) => (
 ));
 
 stories.add('Examples', () => (
-    <>
+    // without RowContainer, the Label would take a full width
+    <RowContainer wrap>
         <Label color="black">
             <Text color="white">Black</Text>
         </Label>
@@ -57,5 +58,5 @@ stories.add('Examples', () => (
         <Label color="white">
             <Text>White</Text>
         </Label>
-    </>
+    </RowContainer>
 ));

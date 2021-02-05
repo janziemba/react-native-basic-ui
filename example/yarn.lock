@@ -6368,10 +6368,10 @@ react-native-animatable@1.3.3:
   dependencies:
     prop-types "^15.7.2"
 
-react-native-basic-ui@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/react-native-basic-ui/-/react-native-basic-ui-3.0.2.tgz#03f6359d6ec2315d8df5fef354bc0fac3ed95634"
-  integrity sha512-VlNFTg8EQvKlagkrgkQkiQlprKMPoy/QxRsHqDK1szpw6XJEAIRQlDw4l9yH1XxE+M9GoGY/PPYbTdyfzWeORg==
+react-native-basic-ui@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-basic-ui/-/react-native-basic-ui-3.1.0.tgz#622db4d333496f1dee4cc583b55fb2b56d3780b4"
+  integrity sha512-rF+9VVX3JTJqyCdLcqLptitNY1MA/hsUSE/n9/NMd+7dcSkadwPvQESdgyMVpHaQWHTiZd0Cl7o0qIFbFpfXSg==
   dependencies:
     "@react-native-community/hooks" "^2.6.0"
     deepmerge "^4.2.2"

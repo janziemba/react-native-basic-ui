@@ -10,8 +10,8 @@ stories.addDecorator((getStory) => <Padding>{getStory()}</Padding>);
 
 stories.add('Playground', () => (
     <ExtendedCard
-        onPress={() => {}}
         labels={[text('label1', 'React Native Basic UI'), text('label2', 'React Native Basic UI')]}
+        onPress={() => {}}
         rating={number('value', 3)}
         ribbon={text('ribbon', 'React Native Basic UI')}
         rnImageProps={{
