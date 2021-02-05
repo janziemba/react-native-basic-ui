@@ -16,7 +16,13 @@
 
 ## Screenshots
 
-<img src="docs/assets/v01.png" width="250" height="504" /><img src="docs/assets/v02.png" width="250" height="504" /><img src="docs/assets/v03.png" width="250" height="504" /><img src="docs/assets/v04.png" width="250" height="504" /><img src="docs/assets/v05.png" width="250" height="504" /><img src="docs/assets/v06.png" width="250" height="504" />
+![Button](/website/static/img/Button01.png)
+![Button](/website/static/img/Button02.png)
+![Text](/website/static/img/Text01.png)
+![Label](/website/static/img/Label01.png)
+![TextInput](/website/static/img/TextInput01.png)
+![Rating](/website/static/img/Rating01.png)
+
 
 ## Getting started
 

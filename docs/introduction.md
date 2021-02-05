@@ -20,3 +20,12 @@ slug: /
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/janziemba/react-native-basic-ui/master/LICENSE.md)
 
 To see it in action, check this [Expo](https://snack.expo.io/@janziemba/react-native-basic-ui).
+
+## Screenshots
+
+![Button](/img/Button01.png)
+![Button](/img/Button02.png)
+![Text](/img/Text01.png)
+![Label](/img/Label01.png)
+![TextInput](/img/TextInput01.png)
+![Rating](/img/Rating01.png)
