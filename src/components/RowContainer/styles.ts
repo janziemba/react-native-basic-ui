@@ -1,21 +1,37 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
 export interface Styles {
-    container: ViewStyle;
-    containerBottom: ViewStyle;
-    containerCenter: ViewStyle;
+    base: ViewStyle;
+    alignBottom: ViewStyle;
+    alignCenter: ViewStyle;
+    alignTop: ViewStyle;
+    wrapFalse: ViewStyle;
+    wrapReverse: ViewStyle;
+    wrapTrue: ViewStyle;
 }
 
 const injectTheme = () =>
     StyleSheet.create<Styles>({
-        container: {
+        base: {
             flexDirection: 'row',
         },
-        containerBottom: {
+        alignBottom: {
             alignItems: 'flex-end',
         },
-        containerCenter: {
+        alignCenter: {
             alignItems: 'center',
+        },
+        alignTop: {
+            alignItems: 'flex-start',
+        },
+        wrapFalse: {
+            flexWrap: 'nowrap',
+        },
+        wrapReverse: {
+            flexWrap: 'wrap-reverse',
+        },
+        wrapTrue: {
+            flexWrap: 'wrap',
         },
     });
 
