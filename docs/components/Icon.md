@@ -3,6 +3,8 @@ id: Icon
 title: Icon
 ---
 
+A list of all available icons can be found [here](https://oblador.github.io/react-native-vector-icons/).
+
 ## Props
 
 ### `color`
