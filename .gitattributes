@@ -1,0 +1,2 @@
+# ignore example directory in language statistics on Github
+example/* linguist-documentation
