@@ -20,7 +20,7 @@
         "react-dom": "16.13.1",
         "react-native": "~0.63.4",
         "react-native-basic-ui": "^3.1.0",
-        "react-native-gesture-handler": "~1.8.0",
+        "react-native-gesture-handler": "~1.10.2",
         "react-native-reanimated": "~1.13.0",
         "react-native-screens": "~2.15.0",
         "react-native-unimodules": "~0.12.0",
