@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {
     NativeSyntheticEvent,
-    Platform,
     TextInput as RNTextInput,
     TextInputFocusEventData,
     TextInputProps as RNTextInputProps,
