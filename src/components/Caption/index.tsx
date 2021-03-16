@@ -24,7 +24,7 @@ const Caption: React.FunctionComponent<Props> = (props: Props) => {
         <>
             <Text
                 align={typography.alignment.caption}
-                color="disabled"
+                color="dark"
                 size="large"
                 weight="bold"
                 {...textProps}
