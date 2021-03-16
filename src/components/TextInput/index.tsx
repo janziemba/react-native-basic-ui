@@ -73,7 +73,7 @@ const TextInput: React.ForwardRefExoticComponent<
         if (!isDisabled) {
             setIsEditable(true);
         }
-    }, []);
+    }, [isDisabled]);
 
     const handleFocus = React.useCallback(
         (event: NativeSyntheticEvent<TextInputFocusEventData>) => {
