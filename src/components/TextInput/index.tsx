@@ -64,19 +64,15 @@ const TextInput: React.ForwardRefExoticComponent<
     const styles: Styles = useStyles(injectTheme);
     const { colors } = useTheme();
 
-    const [isEditable, setIsEditable] = React.useState(true);
+    const [isEditable, setIsEditable] = React.useState(false);
     const [isFocused, setIsFocused] = React.useState(false);
 
     React.useEffect(() => {
         // there is a bug in RN which doesn't let you paste a text
         // https://github.com/facebook/react-native/issues/28366
         // https://github.com/facebook/react-native/issues/20887
-        if (Platform.OS === 'android') {
-            setIsEditable(false);
-
-            setTimeout(() => {
-                setIsEditable(true);
-            }, 100);
+        if (!isDisabled) {
+            setIsEditable(true);
         }
     }, []);
 
