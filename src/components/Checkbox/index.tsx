@@ -34,17 +34,19 @@ const Checkbox: React.FunctionComponent<Props> = (props: Props) => {
 
     return (
         <TouchableWithoutFeedback onPress={handlePress}>
-            <RowContainer align="top">
-                <View style={styles.iconContainer}>
-                    <Icon
-                        color={isChecked ? colors.success : colors.muted}
-                        iconSet="MaterialCommunityIcons"
-                        name={isChecked ? 'checkbox-marked' : 'checkbox-blank'}
-                        {...iconProps}
-                    />
-                </View>
-                <View style={styles.contentContainer}>{children}</View>
-            </RowContainer>
+            <View>
+                <RowContainer align="top">
+                    <View style={styles.iconContainer}>
+                        <Icon
+                            color={isChecked ? colors.success : colors.muted}
+                            iconSet="MaterialCommunityIcons"
+                            name={isChecked ? 'checkbox-marked' : 'checkbox-blank'}
+                            {...iconProps}
+                        />
+                    </View>
+                    <View style={styles.contentContainer}>{children}</View>
+                </RowContainer>
+            </View>
         </TouchableWithoutFeedback>
     );
 };
