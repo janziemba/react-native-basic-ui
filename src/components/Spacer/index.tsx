@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     /**
      * A size of the space. The default value is `large`.
      */

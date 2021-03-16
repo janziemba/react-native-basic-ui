@@ -6,7 +6,7 @@ import { capitalize } from '../../utils';
 import Text, { Props as TextProps } from '../Text';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     children?: React.ReactNode;
     /**
      * A color of the label. The default value is `success`.

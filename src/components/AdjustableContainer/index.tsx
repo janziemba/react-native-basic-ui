@@ -13,7 +13,7 @@ import Link from '../Link';
 import Padding from '../Padding';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     children?: React.ReactNode;
     /**
      * A text of the link to dismiss keyboard.

@@ -6,7 +6,7 @@ import Icon, { Props as IconProps } from '../Icon';
 import Link from '../Link';
 import Text from '../Text';
 
-interface Props {
+export interface Props {
     /**
      * A hidden content.
      */

@@ -5,7 +5,7 @@ import { useStyles } from '../../theme';
 import { capitalize } from '../../utils';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     /**
      * A vertical alignment of the content. The default value is `center`.
      */

@@ -6,7 +6,7 @@ import Icon, { Props as IconProps } from '../Icon';
 import RowContainer from '../RowContainer';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     children?: React.ReactNode | string;
     /**
      * Icon props.

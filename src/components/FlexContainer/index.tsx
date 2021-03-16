@@ -4,7 +4,7 @@ import { View, ViewProps as RNViewProps } from 'react-native';
 import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     children?: React.ReactNode;
     /**
      * React Native's View props.

@@ -11,7 +11,7 @@ import {
 import { useStyles, useTheme } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     /**
      * If `true`, an error style is applied. The default value is `false`.
      */

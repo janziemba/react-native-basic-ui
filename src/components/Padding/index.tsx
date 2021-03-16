@@ -6,7 +6,7 @@ import injectTheme, { Styles } from './styles';
 
 type Size = 'tiny' | 'small' | 'medium' | 'large' | 'huge' | 'gigantic';
 
-interface Props {
+export interface Props {
     /**
      * If `false`, the padding is not applied on the bottom. The default value is `true`.
      */

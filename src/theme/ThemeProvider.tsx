@@ -8,7 +8,7 @@ type DeepPartial<T> = {
     [P in keyof T]?: DeepPartial<T[P]>;
 };
 
-interface Props {
+export interface Props {
     /**
      * A custom theme object consisting of colors, linearGradients, radiuses, spacing and typography.
      */

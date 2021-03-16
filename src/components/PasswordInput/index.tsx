@@ -14,7 +14,7 @@ import Icon, { Props as IconProps } from '../Icon';
 import Scalable from '../Scalable';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     /**
      * If `true`, an error style is applied. The default value is `false`.
      */

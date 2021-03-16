@@ -3,7 +3,7 @@ import { GestureResponderEvent } from 'react-native';
 
 import Text, { Props as TextProps } from '../Text';
 
-interface Props {
+export interface Props {
     /**
      * An actual text or an Icon and a text.
      */

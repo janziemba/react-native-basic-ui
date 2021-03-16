@@ -9,7 +9,7 @@ import Scalable, { Props as ScalableProps } from '../Scalable';
 import Text, { Props as TextProps } from '../Text';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     /**
      * A color of the button. The default value is `primary`.
      */

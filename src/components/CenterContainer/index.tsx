@@ -4,7 +4,7 @@ import { View, ViewProps as RNViewProps, ViewStyle } from 'react-native';
 import { useStyles } from '../../theme';
 import injectTheme, { Styles } from './styles';
 
-interface Props {
+export interface Props {
     children?: React.ReactNode;
     /**
      * If `true`, `alignItems: 'center'` style is applied. The default value is `true`.
