@@ -1,3 +1,5 @@
+/* eslint-disable sort-keys, typescript-sort-keys/interface */
+
 import { StyleSheet, ViewStyle } from 'react-native';
 
 import { Theme } from '../../theme';

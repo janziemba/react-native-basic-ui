@@ -1,10 +1,10 @@
 import { StyleSheet, ViewStyle } from 'react-native';
 
 export interface Styles {
-    base: ViewStyle;
     alignBottom: ViewStyle;
     alignCenter: ViewStyle;
     alignTop: ViewStyle;
+    base: ViewStyle;
     wrapFalse: ViewStyle;
     wrapReverse: ViewStyle;
     wrapTrue: ViewStyle;
@@ -12,9 +12,6 @@ export interface Styles {
 
 const injectTheme = () =>
     StyleSheet.create<Styles>({
-        base: {
-            flexDirection: 'row',
-        },
         alignBottom: {
             alignItems: 'flex-end',
         },
@@ -23,6 +20,9 @@ const injectTheme = () =>
         },
         alignTop: {
             alignItems: 'flex-start',
+        },
+        base: {
+            flexDirection: 'row',
         },
         wrapFalse: {
             flexWrap: 'nowrap',

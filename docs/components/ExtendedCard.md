@@ -5,14 +5,6 @@ title: ExtendedCard
 
 ## Props
 
-### `labels`
-
-An array of texts in the labels.
-
-| Type     | Required |
-| ---------| -------- |
-| string[] | No       |
-
 ### `labelTextProps`
 
 Text props of the labels. Check [Text documentation](Text.md#props).
@@ -20,6 +12,14 @@ Text props of the labels. Check [Text documentation](Text.md#props).
 | Type   | Required |
 | -------| -------- |
 | object | No       |
+
+### `labels`
+
+An array of texts in the labels.
+
+| Type     | Required |
+| ---------| -------- |
+| string[] | No       |
 
 ### `onPress`
 

@@ -5,14 +5,6 @@ title: Rating
 
 ## Props
 
-### `iconProps`
-
-Icon props of all icons. Check [Icon documentation](Icon.md#props).
-
-| Type   | Required |
-| -------| -------- |
-| object | No       |
-
 ### `emptyIconProps`
 
 Icon props of the empty icons. Check [Icon documentation](Icon.md#props).
@@ -32,6 +24,14 @@ Icon props of the full icons. Check [Icon documentation](Icon.md#props).
 ### `halfIconProps`
 
 Icon props of the half icon. Check [Icon documentation](Icon.md#props).
+
+| Type   | Required |
+| -------| -------- |
+| object | No       |
+
+### `iconProps`
+
+Icon props of all icons. Check [Icon documentation](Icon.md#props).
 
 | Type   | Required |
 | -------| -------- |

@@ -7,10 +7,6 @@ import injectTheme, { Styles } from './styles';
 
 export interface Props {
     /**
-     * Icon props of all icons.
-     */
-    iconProps?: Partial<IconProps>;
-    /**
      * Icon props of the empty icons.
      */
     emptyIconProps?: Partial<IconProps>;
@@ -22,6 +18,10 @@ export interface Props {
      * Icon props of the half icon.
      */
     halfIconProps?: Partial<IconProps>;
+    /**
+     * Icon props of all icons.
+     */
+    iconProps?: Partial<IconProps>;
     /**
      * A value of the rating between 0 and 5. The default value is `5`.
      */

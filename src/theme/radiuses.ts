@@ -1,3 +1,5 @@
+/* eslint-disable sort-keys, typescript-sort-keys/interface */
+
 export interface Radiuses {
     tiny: number;
     small: number;

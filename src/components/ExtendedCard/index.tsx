@@ -14,13 +14,13 @@ import injectTheme, { Styles } from './styles';
 
 export interface Props {
     /**
-     * An array of texts in the labels.
-     */
-    labels?: string[];
-    /**
      * Text props of the label.
      */
     labelTextProps?: Partial<TextProps>;
+    /**
+     * An array of texts in the labels.
+     */
+    labels?: string[];
     /**
      * Called when a single tap gesture is detected.
      */

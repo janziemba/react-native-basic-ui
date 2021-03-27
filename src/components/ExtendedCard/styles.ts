@@ -23,10 +23,10 @@ const injectTheme = ({ colors, radiuses, spacing }: Theme) =>
             width: undefined,
         },
         imageContainer: {
-            borderTopLeftRadius: radiuses.large,
-            borderTopRightRadius: radiuses.large,
             borderBottomColor: colors.light,
             borderBottomWidth: 1,
+            borderTopLeftRadius: radiuses.large,
+            borderTopRightRadius: radiuses.large,
             flex: 1,
             height: 150,
             overflow: 'hidden',

@@ -1,7 +1,7 @@
 export interface Colors {
     black: string;
-    dark: string;
     danger: string;
+    dark: string;
     disabled: string;
     facebook: string;
     google: string;
@@ -18,8 +18,8 @@ export interface Colors {
 
 const colors: Colors = {
     black: '#000000',
-    dark: '#3d3d3d',
     danger: '#f6511d',
+    dark: '#3d3d3d',
     disabled: '#cccccc',
     facebook: '#1877f2',
     google: '#4285f4',

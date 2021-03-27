@@ -1,3 +1,5 @@
+/* eslint-disable sort-keys, typescript-sort-keys/interface */
+
 import { Platform } from 'react-native';
 
 type Alignment = 'center' | 'justify' | 'left' | 'right';
