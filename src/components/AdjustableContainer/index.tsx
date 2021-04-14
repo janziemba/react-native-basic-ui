@@ -58,7 +58,7 @@ const AdjustableContainer: React.FunctionComponent<Props> = (props: Props) => {
         }
 
         return undefined;
-    }, [keyboardHeight]);
+    }, [bottomInset, keyboardHeight]);
 
     if (Platform.OS === 'ios') {
         return (
