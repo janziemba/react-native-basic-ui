@@ -5,13 +5,13 @@ title: AdjustableContainer
 
 ## Props
 
-### `dismissKeyboardText`
+### `bottomInset`
 
-A text of the link to dismiss keyboard.
+A safe area inset on the bottom.
 
 | Type   | Required |
 | -------| -------- |
-| string | Yes      |
+| number | Yes      |
 
 ### `rnViewProps`
 

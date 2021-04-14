@@ -9,16 +9,14 @@ import {
 } from 'react-native';
 
 import { useStyles } from '../../theme';
-import Link from '../Link';
-import Padding from '../Padding';
 import injectTheme, { Styles } from './styles';
 
 export interface Props {
-    children?: React.ReactNode;
     /**
-     * A text of the link to dismiss keyboard.
+     * A safe area inset on the bottom.
      */
-    dismissKeyboardText: string;
+    bottomInset: number;
+    children?: React.ReactNode;
     /**
      * React Native's View props.
      */
@@ -26,7 +24,7 @@ export interface Props {
 }
 
 const AdjustableContainer: React.FunctionComponent<Props> = (props: Props) => {
-    const { children, dismissKeyboardText, rnViewProps } = props;
+    const { bottomInset, children, rnViewProps } = props;
 
     const styles: Styles = useStyles(injectTheme);
 
@@ -39,7 +37,7 @@ const AdjustableContainer: React.FunctionComponent<Props> = (props: Props) => {
                 (event: KeyboardEvent): void => {
                     Animated.timing(keyboardHeight, {
                         duration: 250,
-                        toValue: event.endCoordinates.height,
+                        toValue: event.endCoordinates.height - bottomInset,
                         useNativeDriver: false,
                     }).start();
                 },
@@ -62,20 +60,14 @@ const AdjustableContainer: React.FunctionComponent<Props> = (props: Props) => {
         return undefined;
     }, [keyboardHeight]);
 
-    const handleDismissKeyboardPress = React.useCallback(() => {
-        Keyboard.dismiss();
-    }, []);
-
     if (Platform.OS === 'ios') {
         return (
-            <View style={styles.container} {...rnViewProps}>
+            <Animated.View
+                style={[styles.container, { paddingBottom: keyboardHeight }]}
+                {...rnViewProps}
+            >
                 {children}
-                <Animated.View style={[styles.keyboardContainer, { height: keyboardHeight }]}>
-                    <Padding>
-                        <Link onPress={handleDismissKeyboardPress}>{dismissKeyboardText}</Link>
-                    </Padding>
-                </Animated.View>
-            </View>
+            </Animated.View>
         );
     }
 
