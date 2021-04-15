@@ -13,7 +13,7 @@
         "@storybook/addon-ondevice-knobs": "^5.3.23",
         "@storybook/react-native": "^5.3.23",
         "expo": "~38.0.0",
-        "expo-linear-gradient": "~8.2.1",
+        "expo-linear-gradient": "~9.1.0",
         "expo-splash-screen": "^0.5.0",
         "expo-updates": "~0.2.8",
         "react": "16.13.1",
