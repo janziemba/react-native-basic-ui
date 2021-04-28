@@ -1,0 +1,143 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: husky
+    versions:
+    - ">= 5.a, < 6"
+  - dependency-name: eslint-plugin-jest
+    versions:
+    - 24.3.2
+    - 24.3.4
+    - 24.3.5
+  - dependency-name: eslint
+    versions:
+    - 7.21.0
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.12.17
+    - 7.13.1
+    - 7.13.10
+    - 7.13.13
+    - 7.13.14
+    - 7.13.15
+    - 7.13.8
+  - dependency-name: typescript
+    versions:
+    - 4.2.2
+    - 4.2.3
+  - dependency-name: "@babel/runtime"
+    versions:
+    - 7.12.18
+    - 7.13.10
+    - 7.13.2
+    - 7.13.6
+    - 7.13.7
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: "@commitlint/cli"
+    versions:
+    - 12.0.0
+    - 12.0.1
+  - dependency-name: "@commitlint/config-conventional"
+    versions:
+    - 12.0.0
+    - 12.0.1
+  - dependency-name: semantic-release
+    versions:
+    - 17.4.0
+    - 17.4.1
+- package-ecosystem: npm
+  directory: "/website"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@docusaurus/core"
+    versions:
+    - 2.0.0-alpha.71
+    - 2.0.0-alpha.72
+    - 2.0.0-alpha.73
+  - dependency-name: "@docusaurus/preset-classic"
+    versions:
+    - 2.0.0-alpha.71
+    - 2.0.0-alpha.72
+    - 2.0.0-alpha.73
+  - dependency-name: "@docusaurus/remark-plugin-npm2yarn"
+    versions:
+    - 2.0.0-alpha.71
+    - 2.0.0-alpha.72
+    - 2.0.0-alpha.73
+- package-ecosystem: npm
+  directory: "/example"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@storybook/addon-actions"
+    versions:
+    - 6.1.17
+    - 6.1.18
+    - 6.1.19
+    - 6.1.20
+    - 6.1.21
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.4
+    - 6.2.5
+    - 6.2.6
+    - 6.2.7
+    - 6.2.8
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.1
+    - 7.13.10
+    - 7.13.13
+    - 7.13.14
+    - 7.13.15
+    - 7.13.8
+  - dependency-name: react-native-screens
+    versions:
+    - 2.17.1
+    - 2.18.0
+    - 2.18.1
+    - 3.0.0
+    - 3.1.0
+  - dependency-name: typescript
+    versions:
+    - 4.1.5
+    - 4.2.2
+    - 4.2.3
+  - dependency-name: expo-linear-gradient
+    versions:
+    - 9.0.0
+  - dependency-name: expo-splash-screen
+    versions:
+    - 0.9.0
+  - dependency-name: "@types/react-dom"
+    versions:
+    - 17.0.0
+    - 17.0.1
+    - 17.0.2
+  - dependency-name: react-native-gesture-handler
+    versions:
+    - 1.10.0
+    - 1.10.1
+    - 1.10.2
+  - dependency-name: "@expo/vector-icons"
+    versions:
+    - 12.0.3
