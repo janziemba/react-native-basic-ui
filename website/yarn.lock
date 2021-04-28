@@ -1322,10 +1322,10 @@
     "@docusaurus/theme-classic" "2.0.0-alpha.70"
     "@docusaurus/theme-search-algolia" "2.0.0-alpha.70"
 
-"@docusaurus/remark-plugin-npm2yarn@^2.0.0-alpha.70":
-  version "2.0.0-alpha.70"
-  resolved "https://registry.yarnpkg.com/@docusaurus/remark-plugin-npm2yarn/-/remark-plugin-npm2yarn-2.0.0-alpha.70.tgz#d4cd4a850bf362e40cf6e6009e957eb6a3711faa"
-  integrity sha512-Rr2l8z4SJOwHw4aGG1qmPXDj4eNySvW5byniLiAbnHUWPKkxP5HANGvcaanMZWoPMEOJBuaHvlN3a8CnrhYb1A==
+"@docusaurus/remark-plugin-npm2yarn@^2.0.0-alpha.74":
+  version "2.0.0-alpha.74"
+  resolved "https://registry.yarnpkg.com/@docusaurus/remark-plugin-npm2yarn/-/remark-plugin-npm2yarn-2.0.0-alpha.74.tgz#992b15f944b62b50819a8d81fefd0323d3c46da6"
+  integrity sha512-dlApEQ4k3QFzTZHONqW54+nux7HvJHBSFK47c+9Ku3JWTEEoqNGFlmD+YTEer955bCgccXRNUEhb3wgNt5dQyA==
   dependencies:
     npm-to-yarn "^1.0.1"
 
